@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="../../">
+<script src="shared/environment.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0968D2">
+  <meta name="description" content="HRM ESS employee dashboard for profile, action items, learning, and HR services.">
+  <title>Home | HRM ESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230968D2'/%3E%3Cpath d='M17 17h8v12h14V17h8v30h-8V36H25v11h-8z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="features/dashboard/dashboard.css">
+  <link rel="stylesheet" href="features/dashboard/dashboard-layout.css">
+  <script defer src="shared/components/header/menu-icons.js"></script>
+  <script defer src="shared/components/header/notifications.js"></script>
+  <script defer src="data/stores/tasks.js"></script>
+  <script defer src="features/dashboard/dashboard.js"></script>
+<link rel="stylesheet" href="shared/components/header/dropdown.css"><script defer src="shared/components/header/dropdown.js"></script>
+<link rel="stylesheet" href="shared/components/footer/footer.css">
+<link rel="stylesheet" href="shared/components/table/table.css"><script defer src="shared/components/table/table.js"></script><link rel="stylesheet" href="shared/styles/tokens.css">
+</head>
+<body>
+  <script src="shared/components/header/dashboard-header.js" data-ess-fragment="shared/components/header/dashboard-header.js"></script>
+
+  <main class="dashboard-exploration dv" id="dashboard">
+    <section class="dv-hero" aria-labelledby="dvName">
+      <div class="dv-hero-grid">
+        <div>
+          <p class="dv-hello dv-rise"><svg id="dvGreetIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg><span id="dvGreeting">Welcome back</span><span aria-hidden="true">·</span><span id="dvToday"></span></p>
+          <div class="dv-identity dv-rise" style="animation-delay:.05s">
+            <div class="dv-avatar"><div class="dv-avatar-inner">NQ<img class="avatar-photo" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3IT4LLvxLusaHP04o2LT-6cymUjyK4gdDXL9l5ljjkP8XbI0w_v1lAkv53lmtxUcmqXr2oW1oJlXoVpw2su3JtKN0P0DILF6h1G5hZbdoC6a5P7kizXQq2gSAOzkSYMDKwiMFSmZLbhA9W4BLMlQn3LBAf7k8q6dj7bEUR-c5-D5kLkvCI9Gwtc_33oPdTXl2APfMhCRz-RzxNzF89q0K9DMCHzwRxgCYiZtLK0l3WuEeJ9appAZjP2VVoW_0dO3gyRXcvZbchS5W"></div></div>
+            <div style="min-width:0">
+              <h1 id="dvName" class="dv-name">Nguyễn Quang</h1>
+              <p class="dv-role"><b>AI Engineer 1</b> · AI Center · FPT Software JSC</p>
+            </div>
+          </div>
+          <div class="dv-tags dv-rise" style="animation-delay:.1s">
+            <span class="dv-tag"><span>Employee ID</span> 01138569</span>
+            <span class="dv-tag"><span>Contract</span> <span lang="vi" style="color:#fff">Chính thức</span></span>
+            <span class="dv-tag"><span>Level</span> 3.3M</span>
+          </div>
+        </div>
+        <div class="dv-hero-side dv-rise" style="animation-delay:.15s">
+          <div class="dv-tenure">
+            <div><small>Group First Start Date</small><strong class="dv-num">02/05/2018</strong></div>
+            <div><small>Group Seniority</small><strong class="dv-num">6<em>yrs</em> 4<em>mos</em></strong></div>
+          </div>
+          <div class="dv-hero-actions">
+            <a class="dv-btn dv-btn-light" href="features/employee-profile/index.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>View Profile</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="dv-wrap">
+      <section class="dv-kpis" aria-label="Quick Access">
+        <article id="kpi-worked" class="dv-kpi dv-rise" style="animation-delay:.12s">
+          <span class="dv-kpi-top"><span class="dv-kpi-label">Days Worked This Month</span><span class="dv-ico blue"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span></span>
+          <button type="button" class="dv-kpi-open" data-open="Days Worked This Month" aria-label="Days Worked This Month"></button>
+          <span class="dv-kpi-body">
+            <span class="dv-ring"><svg viewBox="0 0 56 56"><circle class="trk" cx="28" cy="28" r="24"/><circle class="val" id="dvRing" cx="28" cy="28" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg><b id="dvRingPct">0%</b></span>
+            <span><span class="dv-big dv-num">03<small>/ 21 days</small></span><span class="dv-sub">Standard working days</span></span>
+          </span>
+        </article>
+        <article id="kpi-leave" class="dv-kpi dv-kpi-leave dv-rise" style="animation-delay:.17s">
+          <span class="dv-kpi-top"><span class="dv-kpi-label">Leave Balance</span><span class="dv-ico green"><svg viewBox="0 0 24 24"><path d="M12 3c3 3 4.5 6 4.5 9a4.5 4.5 0 0 1-9 0C7.5 9 9 6 12 3Z"/><path d="M12 21v-6"/></svg></span></span>
+          <button type="button" class="dv-kpi-open" data-open="Leave Balance" aria-label="Leave Balance"></button>
+          <span class="dv-kpi-body">
+            <span class="dv-split"><span class="dv-big dv-num">05<small>/ 14 days</small></span></span>
+            <span class="dv-bar" aria-hidden="true"><i id="dvLeaveBar" style="width:0"></i></span>
+            <span class="dv-sub">Remaining of annual entitlement</span>
+          </span>
+        </article>
+        <article id="kpi-task-summary" class="dv-kpi dv-rise" style="animation-delay:.22s">
+          <span class="dv-kpi-top"><span class="dv-kpi-label">Action Items</span><span class="dv-ico amber"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg></span></span>
+          <button type="button" class="dv-kpi-open" data-scroll="dvTasks" aria-label="Action Items"></button>
+          <span class="dv-kpi-body">
+            <span><span class="dv-big dv-num" id="dvTaskTotal">0</span><span class="dv-sub">Open items waiting for you</span></span>
+          </span>
+          <span class="dv-pills" id="dvTaskPills"></span>
+        </article>
+        <button class="dv-kpi dv-rise" style="animation-delay:.27s" type="button" data-open="Payslip">
+          <span class="dv-kpi-top"><span class="dv-kpi-label">Payslip</span><span class="dv-ico violet"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span></span>
+          <span class="dv-kpi-body">
+            <span class="dv-pay"><span class="dv-pay-amt" aria-label="Amount hidden">••••••</span><span class="dv-sub">Amount hidden for privacy</span></span>
+          </span>
+          <span class="dv-link">View Payslip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </section>
+
+      <div class="dv-grid">
+        <section class="dv-card dv-rise" style="animation-delay:.3s" id="dvTasks" aria-labelledby="tasksHeading">
+          <div class="dv-card-head">
+            <div><h2 id="tasksHeading" class="dv-card-title">Action Items <span class="dv-count dv-num" id="dvTaskCount">0</span></h2><p class="dv-card-desc">Things that need your attention, sorted by due date.</p></div>
+            <div class="dv-seg" role="tablist" aria-label="Filter action items">
+              <button type="button" role="tab" aria-selected="true" data-filter="all">All <span class="n" data-n="all">0</span></button>
+              <button type="button" role="tab" aria-selected="false" data-filter="upcoming">Due Soon <span class="n" data-n="upcoming">0</span></button>
+              <button type="button" role="tab" aria-selected="false" data-filter="overdue">Overdue <span class="n" data-n="overdue">0</span></button>
+            </div>
+          </div>
+          <div id="taskList" class="dv-tasks" role="tabpanel" aria-live="polite"></div>
+          <div class="dv-card-foot"><a id="tasksViewAll" class="dv-textbtn" href="features/tasks/manage-tasks/index.html">View All</a></div>
+        </section>
+
+
+          <section class="dv-card dv-rise" style="animation-delay:.35s" id="quickCard" aria-labelledby="quickHeading">
+            <div class="dv-card-head"><div><h2 id="quickHeading" class="dv-card-title">Quick Actions</h2><p class="dv-card-desc">Your selected services.</p><small id="quickSelectionCount" class="quick-selection-count"></small></div><button class="quick-customize" type="button" data-scroll="serviceCatalog">Customize</button></div>
+            <div class="dv-quick" id="dvQuick"></div>
+          </section>
+
+      </div>
+
+      <section class="dv-card dv-rise" style="animation-delay:.45s" aria-labelledby="learningHeading">
+        <div class="dv-card-head">
+          <div><h2 id="learningHeading" class="dv-card-title">Required Learning &amp; Assessments</h2><p class="dv-card-desc" id="dvLearnDesc">Complete the following required items by their due dates.</p></div>
+          <button type="button" class="dv-textbtn" data-open="eLearning">Open eLearning <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="dv-learn-wrap">
+          <button class="dv-arrow prev" id="learningPrevious" type="button" aria-label="Previous items" aria-controls="learningTrack"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+          <div class="dv-learn" id="learningTrack" role="region" aria-label="Required learning and assessments" tabindex="0"></div>
+          <button class="dv-arrow next" id="learningNext" type="button" aria-label="Next items" aria-controls="learningTrack"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+          
+        </div>
+      </section>
+
+      <section class="dv-card dv-rise" style="animation-delay:.5s" id="serviceCatalog" aria-labelledby="servicesHeading" tabindex="-1">
+        <div class="dv-card-head">
+          <div><h2 id="servicesHeading" class="dv-card-title">Service Catalog</h2><p class="dv-card-desc">Select a service to submit a request. Use ☆ to add it to Quick Actions.</p><small id="catalogSelectionCount" class="quick-selection-count"></small></div>
+          <label class="dv-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="dvServiceSearch" type="search" placeholder="Search services…" aria-label="Search services" autocomplete="off"></label>
+        </div>
+        <div id="serviceGrid" class="dv-services"></div>
+      </section>
+    </div>
+  </main>
+<script src="shared/components/footer/dashboard-footer.js" data-ess-fragment="shared/components/footer/dashboard-footer.js"></script>
+  <dialog id="prototypeDialog"><div class="dialog-head"><h2 id="dialogTitle"></h2><button type="button" id="dialogClose" aria-label="Close dialog">×</button></div><div id="dialogBody"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden><span id="toastMessage"></span><button id="toastUndo" class="toast-undo" type="button" hidden>Undo</button><button id="toastClose" type="button" aria-label="Close notifications">×</button></div>
+</body>
+</html>

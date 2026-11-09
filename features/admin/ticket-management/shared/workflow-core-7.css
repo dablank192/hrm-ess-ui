@@ -1,0 +1,16 @@
+
+/* Inter is the primary family everywhere, including legacy monospace styles. */
+:root{--sans:Inter,'Segoe UI',Arial,sans-serif;--mono:Inter,'Segoe UI',Arial,sans-serif}
+body,body *{font-family:Inter,'Segoe UI',Arial,sans-serif!important}
+/* Shared list controls: search inputs using .inp are also compact. */
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) .pg-tools input:not([type="checkbox"]):not([type="radio"]),
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) .pg-tools select,
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) .gtb input:not([type="checkbox"]):not([type="radio"]),
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) .gtb select{
+ box-sizing:border-box;height:32px!important;min-height:32px!important;max-height:32px!important;font-size:13px;line-height:18px;padding-top:6px;padding-bottom:6px}
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) :is(.pg-tools,.gtb) select{padding-top:0;padding-bottom:0}
+/* All table headers and cell text, including inline legacy captions and pills. */
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) table,
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) table :is(th,td),
+#view:is([data-ui-screen="user-group"],[data-ui-screen="ma-tran"]) table :is(th,td) *{
+ font-size:14px!important;line-height:20px}

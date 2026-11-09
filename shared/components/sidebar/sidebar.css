@@ -1,0 +1,47 @@
+/* Shared Admin Center navigation, alongside both administration screens. */
+.ess-admin-layout{display:grid;grid-template-columns:var(--ess-admin-sidebar-width,248px) minmax(0,1fr);flex:1;min-width:0;align-items:stretch}
+.ess-admin-sidebar{min-width:0;background:#fff;border-right:1px solid #DFE3E8;color:#161C24}
+.ess-admin-sidebar-inner{position:sticky;top:56px;height:calc(100vh - 56px);height:calc(100dvh - 56px);display:flex;flex-direction:column;padding:0;box-sizing:border-box}
+.ess-admin-sidebar-title{display:flex;flex:none;align-items:center;gap:12px;height:56px;margin:0;padding:0 20px;border-bottom:1px solid #DFE3E8;box-sizing:border-box;font:600 16px/24px Inter,'Segoe UI',Arial,sans-serif;color:#101828}
+.ess-admin-sidebar svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ess-admin-sidebar .ess-admin-primary-nav{display:flex;flex-direction:column;gap:4px;flex:1;min-height:0;overflow-y:auto;padding:12px 2px 16px;margin:0}
+.ess-admin-sidebar a,.ess-admin-sidebar button{display:flex;flex:none;align-items:center;gap:12px;min-height:44px;padding:12px 10px;border:0;border-radius:8px;background:transparent;color:#161C24;text-decoration:none;font:500 14px/20px Inter,'Segoe UI',Arial,sans-serif;overflow-wrap:anywhere;text-align:left;cursor:pointer}
+.ess-admin-sidebar a:hover,.ess-admin-sidebar button:hover{background:#F1F3F5;color:#161C24}
+.ess-admin-sidebar a[aria-current=page]{background:#E6F2FF;color:#0968D2;font-weight:600;box-shadow:none}
+.ess-admin-sidebar :is(a,button):focus-visible{outline:2px solid #0968D2;outline-offset:-2px}
+.ess-admin-sidebar .ess-admin-group-toggle{font-weight:600;width:100%;gap:12px}
+.ess-admin-primary-nav>a,.ess-admin-sidebar .ess-admin-group-toggle{border-radius:10px}
+.ess-admin-sidebar .ess-admin-group-toggle.is-current{color:#0968D2;background:#E6F2FF}
+.ess-admin-sidebar .ess-admin-group-chevron{width:16px;height:16px;margin-left:auto}
+.ess-admin-group-toggle[aria-expanded=false] .ess-admin-group-chevron{transform:rotate(180deg)}
+.ess-admin-workflow-nav{display:flex;flex-direction:column;gap:4px;padding-left:0}
+.ess-admin-sidebar .ess-workflow-nav-item{position:relative;width:100%;min-height:44px;margin:0;padding:12px 10px 12px 42px;gap:8px;font-size:14px;line-height:20px;font-weight:400;white-space:normal;border:0;border-radius:8px}
+.ess-admin-sidebar .ess-workflow-nav-item[aria-current=page]{color:#0968D2;background:transparent;font-weight:500;box-shadow:none}
+.ess-admin-sidebar .ess-workflow-nav-item[aria-current=page]::before{content:'';position:absolute;left:18px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:#0968D2}
+.ess-admin-sidebar [hidden]{display:none!important}
+.ess-admin-section{display:flex;flex-direction:column;min-width:0}
+.admin-body>.ess-admin-layout>.admin-main{width:100%;min-width:0;margin:0 auto}
+.workflow-config-host .ess-admin-section>.shell{min-width:0}
+.ess-admin-sidebar-footer{display:flex;flex:none;align-items:center;gap:8px;min-height:56px;box-sizing:border-box;margin:auto 0 0;padding:10px 12px;border-top:1px solid #DFE3E8;color:#667085;background:#fff}
+.ess-admin-sidebar-footer img{display:block;flex:none;width:32px;height:32px;object-fit:contain}
+.ess-admin-sidebar-footer small{font:400 11px/16px Inter,'Segoe UI',Arial,sans-serif;overflow-wrap:anywhere}
+.ess-admin-sidebar .ess-admin-collapse{display:grid;place-items:center;flex:none;min-height:32px;width:32px;padding:5px;gap:0;margin-left:auto;border:1px solid #C4CCD5;border-radius:6px}
+.ess-admin-collapse svg{width:20px;height:20px}
+@media(min-width:768px){
+ .ess-admin-layout.is-sidebar-collapsed{--ess-admin-sidebar-width:72px}
+ .is-sidebar-collapsed .ess-admin-sidebar-title{justify-content:center;padding-inline:12px}
+ .is-sidebar-collapsed .ess-admin-sidebar .ess-admin-primary-nav{display:none}
+ .is-sidebar-collapsed .ess-admin-sidebar :is(h2,a,button)>span,.is-sidebar-collapsed .ess-admin-group-chevron,.is-sidebar-collapsed .ess-admin-sidebar-footer small{display:none}
+ .is-sidebar-collapsed .ess-admin-sidebar :is(a,.ess-admin-group-toggle,.ess-workflow-nav-item){justify-content:center;padding:12px;gap:0}
+ .is-sidebar-collapsed .ess-admin-workflow-nav{padding-left:0}
+ .is-sidebar-collapsed .ess-admin-sidebar-footer{flex-direction:column;gap:8px}
+ .is-sidebar-collapsed .ess-admin-collapse{margin-left:0}
+ .is-sidebar-collapsed .ess-admin-collapse svg{transform:rotate(180deg)}
+}
+@media(pointer:coarse){.ess-admin-sidebar .ess-admin-collapse{min-height:44px;width:44px}}
+@media(max-width:767px){
+ .ess-admin-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+ .ess-admin-sidebar{border-right:0;border-bottom:1px solid #DFE3E8}
+ .ess-admin-sidebar-inner{position:static;height:auto}
+ .ess-admin-sidebar .ess-admin-collapse{display:none}
+}

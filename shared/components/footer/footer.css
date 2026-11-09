@@ -1,0 +1,10 @@
+/* Shared copyright footer: participates in page layout, never overlays content. */
+.ess-site-footer{box-sizing:border-box;flex:0 0 auto;width:100%;margin:0;padding:16px 24px 16px;color:#919DAB;background:#F8F9FA;text-align:center;font:400 12px/18px Inter,"Segoe UI",Arial,sans-serif;overflow-wrap:anywhere}
+.ess-site-footer p{margin:0}
+@media(max-width:650px){.ess-site-footer{padding:16px}}
+
+/* Profile footer uses equal spacing on all four sides. */
+.profile-overview>.ess-site-footer{padding:16px}
+
+/* Dashboard follows the Profile footer spacing. */
+#dashboard~.ess-site-footer{padding:16px}

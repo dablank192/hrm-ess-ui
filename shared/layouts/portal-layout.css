@@ -1,0 +1,12 @@
+.global-header{flex:none}
+.global-header .avatar-menu{position:absolute;top:56px;right:var(--ess-header-gutter);width:210px;background:#fff;color:#161C24;border:1px solid #DFE3E8;border-radius:8px;padding:6px;box-shadow:0 8px 24px rgba(16,24,40,.15);z-index:50}
+.global-header .avatar-menu strong{display:block;padding:10px 12px;font-size:13px}
+.global-header .avatar-menu button{display:block;width:100%;border:0;background:transparent;padding:10px 12px;text-align:left;border-radius:5px;cursor:pointer;font-size:14px}
+.global-header .avatar-menu button:hover{background:#F1F3F5}
+.side{top:56px;height:calc(100vh - 56px)}
+.side .nav{padding-top:12px}
+.side .nav>.nav-grp:first-child{margin-top:0}
+.drw{top:56px!important;height:calc(100vh - 56px)!important}
+.ovl{top:56px}
+.portal-breadcrumb{font-size:13px;color:#454F5B;padding:16px 20px 0;display:flex;gap:8px;align-items:center}
+.portal-breadcrumb b{font-weight:600;color:#101828}

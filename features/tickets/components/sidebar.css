@@ -1,0 +1,25 @@
+/* Reuse the Admin Center navigation component without changing Ticket overlays. */
+.tickets-host .tickets-layout{min-height:0}
+.tickets-host .tickets-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.tickets-host .tickets-main>.top{flex:none}
+.tickets-host .tickets-main>.workspace{min-width:0}
+.tickets-host .ess-admin-sidebar-inner{position:static;height:100%}
+.tickets-host .ess-admin-sidebar-footer{background:#fff}
+.tickets-host>.ess-site-footer{display:none}
+
+/* Admin Center heading anatomy with the reference's compact workspace gutters. */
+.tickets-host{--ticket-workspace-gutter:20px}
+.tickets-host .tickets-main>.top{padding:24px var(--ticket-workspace-gutter) 0;container:ticket-heading / inline-size}
+.tickets-host .top>.heading{min-height:57px;margin:0 calc(-1 * var(--ticket-workspace-gutter)) 20px;padding:0 var(--ticket-workspace-gutter) 16px;border-bottom:1px solid #DFE3E8;align-items:center}
+.tickets-host .top .heading h1{font-size:20px;line-height:20px;font-weight:600;letter-spacing:normal;margin:0}
+.tickets-host .top .heading .btn{height:40px;min-height:40px;padding:9px 14px;border-radius:8px;font:600 14px/20px var(--tickets-font)}
+.tickets-host .tickets-main>.workspace{margin-inline:var(--ticket-workspace-gutter)}
+.tickets-host .top[data-ticket-view=delegation]{display:none}
+@container ticket-heading (max-width:500px){.tickets-host .top>.heading{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(max-width:767px){
+ .tickets-host{--ticket-workspace-gutter:16px}
+ .tickets-host .tickets-layout{flex:none;min-height:calc(100dvh - 56px);grid-template-rows:auto minmax(560px,1fr)}
+ .tickets-host .ess-admin-sidebar-inner{height:auto}
+ .tickets-host .ess-admin-sidebar-footer{display:none}
+ .tickets-host .ess-admin-primary-nav{flex:none;overflow:visible}
+}

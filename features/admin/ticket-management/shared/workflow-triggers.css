@@ -1,0 +1,49 @@
+/* Webhook inspector, workflow trigger selection and node delete toolbar from admin_ver62_EN. */
+.wh-listen{width:100%;justify-content:center;background:#e0562e;border-color:#e0562e;color:#fff;font-weight:650}
+.wh-listen:hover{background:#c94a25;border-color:#c94a25;color:#fff}
+.wh-listen.on{background:var(--surface);color:#e0562e}
+.wh-seg{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;align-self:flex-start}
+.wh-seg button{border:0;background:var(--surface-alt);padding:6px 13px;font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-3);cursor:pointer}
+.wh-seg button.on{background:var(--surface);color:var(--ink);box-shadow:inset 0 -2px 0 #e0562e}
+.wh-url{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface-alt);border-radius:7px;padding:8px 9px;min-width:0}
+.wh-url .mono{flex:1;min-width:0;word-break:break-all;font-size:12px;line-height:1.45}
+.wh-m{flex:none;font-size:11px;font-weight:700;background:var(--line);color:var(--ink);border-radius:4px;padding:2px 6px;font-family:var(--mono)}
+.wh-pre{margin:7px 0;padding:8px;background:var(--surface);border:1px solid var(--line-soft);border-radius:6px;font-size:11.5px;white-space:pre;overflow:auto}
+.wh-docs{margin-left:auto;align-self:center;font-size:12.5px;font-weight:600;color:var(--brand);text-decoration:none;padding:0 6px}
+.wh-docs:hover{text-decoration:underline}
+
+.nd .nd-tb{position:absolute;left:50%;top:-34px;height:34px;width:44px;margin-left:-22px;display:none;align-items:flex-start;justify-content:center;z-index:20;cursor:default}
+.nd:hover .nd-tb,.nd.sel .nd-tb{display:flex}
+.nd .nd-tb button{width:30px;height:28px;border:1px solid var(--line);border-radius:7px;background:var(--surface);display:grid;place-items:center;cursor:pointer;padding:0;color:var(--ink-2);box-shadow:var(--sh)}
+.nd .nd-tb button:hover{color:#b3261e;border-color:#b3261e;background:#fff5f4}
+.nd .nd-tb button svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+
+.trg-g{display:flex;flex-direction:column;gap:8px}
+.trg-o{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.trg-o.on{border-color:var(--brand);background:var(--brand-soft,#eef5fd)}
+.trg-o input{margin-top:3px;accent-color:var(--brand)}
+.trg-o b{display:block;font-size:13.5px}
+.trg-o span{display:block;font-size:12px;color:var(--ink-3);line-height:1.45;margin-top:2px}
+.trg-o .trg-ess,.trg-row .trg-ess{display:inline-block;font-size:11px;font-weight:650;margin-top:5px}
+.trg-ess.y{color:var(--ok,#0f7a52)}
+.trg-ess.n{color:var(--ink-3)}
+.trg-row{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.trg-row .trg-ess{margin-top:0}
+.trg-b{font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px;border:1px solid}
+.trg-b.s{color:#0f7a52;border-color:#0f7a5255;background:#0f7a5214}
+.trg-b.w{color:#c94a25;border-color:#e0562e66;background:#e0562e14}
+
+/* Webhook parameter filters from admin_ver63_EN. */
+.wh-ph{display:flex;align-items:center;gap:8px;margin:2px 0 8px}
+.wh-ph b{font-size:13px;color:var(--title)}
+.wh-pc{font-size:11px;font-weight:600;color:var(--ink-2);background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:0 7px;line-height:18px}
+.wh-pcols,.wh-pr{display:grid;grid-template-columns:1fr 1fr 34px;gap:8px;align-items:center}
+.wh-pcols{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--ink-3);margin-bottom:4px;text-transform:uppercase}
+.wh-pr{margin-bottom:8px}
+.wh-pr .inp{width:100%;min-width:0}
+.wh-pr button.wh-pd{width:34px;height:34px;border:1px solid var(--line);border-radius:7px;background:var(--surface);display:grid;place-items:center;cursor:pointer;padding:0;color:var(--ink-2)}
+.wh-pr button.wh-pd:hover{color:#b3261e;border-color:#b3261e;background:#fff5f4}
+.wh-pr button.wh-pd svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wh-padd{width:100%;justify-content:center}
+

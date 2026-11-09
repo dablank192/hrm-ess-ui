@@ -1,0 +1,51 @@
+body{min-height:100vh;display:flex;flex-direction:column;background:#F8F9FA}
+.global-header{position:sticky;top:0;z-index:60;flex:none}
+.profile-form-page{width:100%;max-width:1120px;flex:1;display:block;padding:24px 32px 40px;margin:0 auto}
+.form-heading{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.form-heading h1{font-size:20px;line-height:28px;color:#101828;margin:0;font-weight:700}
+.form-heading button{width:36px;height:36px;border:0;border-radius:6px;color:#161C24;background:transparent;display:grid;place-items:center;cursor:pointer}
+.form-heading button:hover{background:#F1F3F5}.form-heading button:active{background:#E6F2FF}
+.profile-form-card{background:#fff;border:1px solid #DFE3E8;border-radius:8px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:24px}
+.form-grid,.form-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:20px}
+.form-section{grid-column:1/-1;min-width:0}.form-section+.form-section{padding-top:22px;margin-top:22px;border-top:1px solid #DFE3E8}
+.form-section h2,.conditional-section h2{font-size:15px;line-height:22px;color:#101828;margin:0 0 18px}
+.form-section-plain .form-section-grid{margin:0}
+.form-field{min-width:0;display:flex;flex-direction:column;gap:7px}
+.form-field label{color:#454F5B;font-size:14px;font-weight:600;line-height:20px}
+.required-star{color:#E83F30}
+.form-field input:not([type=checkbox]),.form-field select,.form-field output{width:100%;height:40px;border:1px solid #C4CCD5;border-radius:8px;background:#fff;color:#161C24;padding:9px 12px;font-size:14px;line-height:20px;min-width:0}
+.form-field input:not([type=checkbox]):hover,.form-field select:hover{border-color:#919DAB}
+.form-field input:not([type=checkbox]):focus-visible,.form-field select:focus-visible{outline:0;border-color:#0968D2;box-shadow:0 0 0 4px rgba(9,104,210,.25)}
+.form-field select{appearance:none;-webkit-appearance:none;padding-right:38px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23454F5B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center}
+.form-field select:disabled{background-color:#F8F9FA;color:#919DAB;cursor:not-allowed}
+.date-control{position:relative;min-width:0}.date-control input[type=text]{padding-right:44px!important}
+.date-trigger{position:absolute;right:4px;top:4px;width:32px;height:32px;border:0;border-radius:5px;background:transparent;color:#454F5B;display:grid;place-items:center;cursor:pointer}
+.date-trigger svg{width:18px;height:18px}.date-trigger:hover{background:#F1F3F5;color:#0968D2}.date-trigger:active{background:#E6F2FF}
+.date-trigger:focus-visible{outline:2px solid #0968D2;outline-offset:1px}
+.calendar-popup{position:absolute;right:0;top:calc(100% + 6px);z-index:55;width:min(300px,calc(100vw - 48px));padding:12px;background:#fff;border:1px solid #C4CCD5;border-radius:8px;box-shadow:0 8px 24px rgba(16,24,40,.15)}
+.calendar-header{display:flex;align-items:center;gap:5px;margin-bottom:10px}.calendar-header button{border:0;background:transparent;color:#454F5B;width:26px;height:30px;border-radius:5px;cursor:pointer;font-size:22px;line-height:24px}.calendar-header button:hover,.calendar-days button:hover{background:#E6F2FF;color:#0968D2}
+.form-field .calendar-header select{width:auto;height:30px;min-width:0;padding:4px 6px;border:1px solid #DFE3E8;background:#fff;font-size:12px;appearance:auto}.calendar-header select:first-of-type{flex:1}
+.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;text-align:center}.calendar-days span{font-size:11px;line-height:30px;color:#919DAB}.calendar-days button{width:100%;height:30px;border:0;border-radius:5px;background:#fff;color:#161C24;font-size:12px;cursor:pointer}.calendar-days button.selected{background:#0968D2;color:#fff}
+.form-field output{display:flex;align-items:center;background:#F8F9FA;color:#454F5B}
+.form-checkbox-field{display:flex;flex-direction:row;align-items:center;gap:10px;min-height:40px;align-self:end}
+.form-checkbox-field input{width:17px;height:17px;accent-color:#0968D2;margin:0;flex:none;cursor:pointer}
+.form-checkbox-field label{cursor:pointer}
+.form-error{color:#C82E26;font-size:12px;line-height:18px}
+.form-field [aria-invalid=true]{border-color:#E83F30!important}
+.conditional-section{grid-column:1/-1;padding:18px 0 0;border-top:1px solid #DFE3E8}
+.form-footer{position:sticky;bottom:0;z-index:40;background:#fff;border-top:1px solid #DFE3E8;box-shadow:0 -2px 8px rgba(16,24,40,.035)}
+.form-footer-inner{max-width:1120px;margin:auto;padding:13px 32px;display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.secondary-button{background:#fff;border:1px solid #C4CCD5;border-radius:8px;color:#454F5B;font-size:14px;font-weight:600;padding:10px 20px;cursor:pointer}
+.secondary-button:hover{background:#F1F3F5}.secondary-button:active{background:#E6F2FF}
+.primary-button:active{background:#044997;border-color:#044997}
+.secondary-button:focus-visible,.primary-button:focus-visible{outline:0;box-shadow:0 0 0 4px rgba(9,104,210,.25)}
+.form-modal-overlay{position:fixed;inset:0;z-index:90;background:rgba(16,24,40,.4);display:grid;place-items:center;padding:16px}
+.form-modal{position:relative;width:min(440px,100%);background:#fff;border:1px solid #DFE3E8;border-radius:12px;box-shadow:0 16px 40px rgba(16,24,40,.18);padding:28px;text-align:center}
+.form-modal h2{font-size:18px;line-height:26px;color:#101828;margin:0 0 10px}
+.form-modal p{font-size:14px;line-height:22px;color:#454F5B;margin:0}
+.form-modal-actions{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.form-modal-close{position:absolute;top:12px;right:12px;display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:6px;background:transparent;color:#454F5B;font-size:24px;cursor:pointer}
+.form-modal-close:hover{background:#F1F3F5}
+.form-modal-icon{display:grid;place-items:center;margin:0 auto 16px}
+@media(max-width:700px){.profile-form-page{padding:18px 16px 36px}.profile-form-card{padding:18px}.form-footer-inner{padding:12px 16px}.form-grid,.form-section-grid{column-gap:16px}}
+@media(max-width:560px){.form-grid,.form-section-grid{grid-template-columns:minmax(0,1fr)}.profile-form-card{padding:16px}.form-heading h1{font-size:18px}.form-footer-inner .primary-button,.form-footer-inner .secondary-button{padding:10px 12px}.form-modal{padding:24px 18px}}

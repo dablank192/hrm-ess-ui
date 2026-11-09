@@ -1,0 +1,18 @@
+
+/* Compact, grouped list toolbar. Control height is exactly 32px. */
+.workflow-summary-toolbar{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;box-shadow:none;padding:12px 16px;margin-bottom:16px;gap:12px 20px;align-items:center}
+.workflow-summary-toolbar .lft,.workflow-summary-toolbar .rgt{align-items:center}
+.gtb .gsearch input,.pg-tools .gsearch input,.workflow-summary-toolbar input[type="search"],
+.gtb select,.pg-tools select,.filters select,.filters input:not([type="checkbox"]):not([type="radio"]),
+.gtb .seg2 button,.pg-tools .seg2 button,.seg2.workflow-status-filters button{
+ box-sizing:border-box;height:32px;min-height:32px;max-height:32px;font-size:13px;line-height:18px}
+.gtb .gsearch input,.pg-tools .gsearch input{padding-block:6px}
+.gtb select,.pg-tools select,.filters select{padding-top:0;padding-bottom:0}
+.gtb .seg2 button,.pg-tools .seg2 button,.seg2.workflow-status-filters button{padding-top:6px;padding-bottom:6px}
+.gtb .seg2,.pg-tools .seg2{height:32px;min-height:32px;box-sizing:border-box}
+.seg2.workflow-status-filters{height:auto;min-height:32px}
+.gtb .usel select,.pg-tools .usel select{background-color:var(--surface);border-color:var(--line);color:var(--ink-2);font-weight:500}
+.gtb .usel svg,.pg-tools .usel svg{stroke:var(--ink-2)}
+.gtb .usel select:hover,.pg-tools .usel select:hover{border-color:#919DAB}
+.gtb .usel select:focus,.pg-tools .usel select:focus{border-color:var(--brand);box-shadow:var(--ring)}
+@media(max-width:600px){.workflow-summary-toolbar{padding:12px;gap:12px}.workflow-summary-toolbar .gsearch{min-width:0;width:100%;flex-basis:100%}.seg2.workflow-status-filters{flex-wrap:wrap}}

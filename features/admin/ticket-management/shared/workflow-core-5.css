@@ -1,0 +1,9 @@
+
+.workflow-open{border:0;background:transparent;padding:4px 0;min-height:32px;color:var(--brand);font:500 14px/20px var(--sans);display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-align:left}
+.workflow-open:hover{text-decoration:underline;text-underline-offset:3px}.workflow-open:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+.workflow-extra{margin-top:10px;font-size:12px;color:var(--ink-2)}.workflow-extra summary{cursor:pointer;min-height:28px;display:list-item;width:fit-content}.workflow-extra .wfc-kv{padding-top:8px}
+.wfb{font:500 12px/18px var(--sans);letter-spacing:0;border-radius:5px;padding:2px 8px;border-color:transparent}
+.wfb.bg-run{background:var(--ok-soft);color:#196735}.wfb.bg-draft{background:var(--surface-alt);color:var(--ink-2)}.wfb.bg-huy{background:var(--danger-soft);color:#A52A20}
+.empty>.btn{margin-top:16px}.dsn{min-height:260px}.dsn-pal,.insp{min-height:0;overscroll-behavior:contain}
+dialog.cfm-bg{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;border:0;padding:16px;background:transparent;overflow:auto;color:var(--ink)}
+dialog.cfm-bg:not([open]){display:none}dialog.cfm-bg::backdrop{background:rgba(16,24,40,.36)}

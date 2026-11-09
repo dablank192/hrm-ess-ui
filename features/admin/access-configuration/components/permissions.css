@@ -1,0 +1,28 @@
+/* Bulk controls stay aligned with the individual settings they affect. */
+.permission-settings .admin-block-head,.permission-settings .admin-block-row{grid-template-columns:minmax(160px,1fr) 62px 62px 128px 128px 76px;gap:12px}
+.permission-settings .admin-block-head{padding-block:12px;font-size:13px;line-height:20px}
+.permission-column-all{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:56px;cursor:pointer;color:#454F5B}
+.permission-column-all>span{text-align:center}
+.permission-column-all input{width:17px;height:17px;accent-color:#0968D2;cursor:pointer;margin:0}
+.permission-settings .admin-block-check input{margin:0;flex:none;cursor:pointer}
+.permission-settings .is-disabled,.permission-settings .is-disabled input{cursor:not-allowed;color:#919DAB}
+.permission-settings input:focus-visible{outline:2px solid #0968D2;outline-offset:3px}
+.permission-bulk-help,.permission-settings-note{padding:0 16px;margin:0 0 14px;font-size:12px;line-height:20px;color:#667085}
+.permission-settings-note{margin:12px 0 16px}
+:is(.access-view-table.permissions th:nth-child(4),.access-view-table.permissions th:nth-child(5)){min-width:132px;white-space:normal}
+.access-approval-mode{font-size:12px;line-height:20px;white-space:nowrap;color:#454F5B}
+@media(max-width:800px){.permission-settings .admin-block-head,.permission-settings .admin-block-row{grid-template-columns:minmax(100px,1fr) 44px 44px 96px 100px 60px;gap:6px}}
+@media(max-width:700px){
+ .permission-settings .admin-block-head{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px 12px;border-radius:0;border-block:1px solid #DFE3E8}
+ .permission-settings .admin-block-head>span:first-child{display:none}
+ .permission-column-all{flex-direction:row-reverse;justify-content:flex-end;min-height:36px;gap:8px;font-size:13px}
+ .permission-column-all>span{text-align:left}.permission-column-all input{flex:none}
+ .permission-settings .admin-block-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;margin:12px;padding:12px}
+ .permission-settings .admin-block-row>span:first-child{grid-column:1/-1}
+ .permission-settings .admin-block-check{align-items:center;justify-content:flex-start;min-height:40px;gap:8px}
+ .permission-settings .admin-block-check>span{display:inline;font-size:12px;line-height:18px}
+ .permission-bulk-help,.permission-settings-note{padding-inline:12px}
+}
+@media(max-width:400px){.permission-settings .admin-block-row{grid-template-columns:minmax(0,1fr)}.permission-settings .admin-block-head{grid-template-columns:minmax(0,1fr)}}
+
+.permission-settings .admin-block-check.is-disabled input{opacity:.45;filter:grayscale(1)}

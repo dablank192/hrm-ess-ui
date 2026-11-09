@@ -1,0 +1,36 @@
+/* Same navigation component as Tickets, retaining task list/calendar sizing. */
+body.tasks-body{min-height:100dvh;display:flex;flex-direction:column}
+.tasks-body>.global-header{flex:none}
+.tasks-body>.tasks-layout{min-height:0;min-width:0;flex:1}
+.tasks-layout>#main{width:100%;min-width:0;max-width:none;margin:0}
+@media(max-width:767px){
+ .tasks-body .ess-admin-sidebar-inner{height:auto;position:static}
+ .tasks-body .ess-admin-sidebar-footer{display:none}
+ .tasks-body .ess-admin-primary-nav{flex:none;overflow:visible}
+ body.tasks-body:has(#main .task-pagination){height:auto;min-height:100dvh;overflow:visible}
+ .tasks-body .tasks-layout>#main:has(.task-pagination){height:max(560px,calc(100dvh - 56px));min-height:0}
+}
+
+/* Reuse the My Tickets page-heading anatomy in both task views. */
+.tasks-body .tasks-layout>#main:has(>.panel){--task-workspace-gutter:20px;gap:0;padding:24px var(--task-workspace-gutter) 20px}
+.tasks-body #main>.page-head:has(>.create-entry){min-height:57px;margin:0 calc(-1 * var(--task-workspace-gutter)) 20px;padding:0 var(--task-workspace-gutter) 16px;border-bottom:1px solid #DFE3E8;gap:16px;align-items:center}
+.tasks-body #main>.page-head h1{font:600 20px/20px Inter,"Segoe UI",Arial,sans-serif;letter-spacing:normal;margin:0}
+.tasks-body #main>.page-head>.create-entry{height:40px;min-height:40px;padding:9px 14px;border-radius:8px;font:600 14px/20px Inter,"Segoe UI",Arial,sans-serif}
+.tasks-body #main #statusFilter{height:32px;min-height:32px;max-height:32px;padding:5px 12px;font:400 14px/20px Inter,"Segoe UI",Arial,sans-serif}
+@media(max-width:700px){.tasks-body .tasks-layout>#main:has(>.panel){--task-workspace-gutter:16px}.tasks-body #main .task-toolbar-right .status-filter{flex-basis:180px}}
+/* Calendar owns one viewport scroll; all controls stay outside that region. */
+body.tasks-body:has(#main .calendar-scroll){height:100dvh;min-height:0;overflow:hidden}
+.tasks-body:has(#main .calendar-scroll)>.tasks-layout{min-height:0;overflow:hidden}
+.tasks-body .tasks-layout>#main:has(.calendar-scroll){display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden}
+.tasks-body #main:has(.calendar-scroll)>.page-head,
+.tasks-body #main:has(.calendar-scroll)>.creation-notice{flex:none}
+.tasks-body #main>.panel:has(.calendar-scroll){display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.tasks-body #main .panel:has(.calendar-scroll)>.filter-toolbar,
+.tasks-body #main .panel:has(.calendar-scroll)>.calendar-controls{flex:none;background:#fff}
+.tasks-body #main .calendar-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.tasks-body #main .calendar-scroll:focus-visible{outline:2px solid #0968D2;outline-offset:-2px}
+.tasks-body #main .calendar-scroll .weekday{position:sticky;top:0;z-index:2;background:#F8F9FA;align-self:start}
+@media(max-width:767px){
+ .tasks-body:has(#main .calendar-scroll)>.tasks-layout{grid-template-rows:auto minmax(0,1fr)}
+ .tasks-body:has(#main .calendar-scroll) #taskSidebar{max-height:160px;overflow:auto}
+}

@@ -1,0 +1,39 @@
+input.ess-search-field{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23919DAB' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='m16 16 4.5 4.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:10px center;padding-left:34px!important}
+button.ess-row-more{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:6px;border:1px solid var(--line,#C4CCD5);border-radius:8px;color:var(--ink-2,#454F5B);background:var(--surface,#fff);cursor:pointer;vertical-align:middle}
+button.ess-row-more:hover{background:var(--surface-alt,#F1F3F5)}
+button.ess-row-more svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.ess-row-action-menu[popover]{position:fixed;inset:auto;margin:0;padding:4px;min-width:160px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);overflow:auto;background:var(--surface,#fff);color:var(--ink,#161C24);border:1px solid var(--line-soft,#DFE3E8);border-radius:8px;box-shadow:0 8px 24px #1018281f;font:400 14px/20px Inter,Arial,sans-serif}
+.ess-row-action-menu[popover]:not(:popover-open){display:none}
+.ess-row-action-menu button.ess-row-menu-item{display:flex;align-items:center;justify-content:flex-start;gap:8px;width:100%;height:auto;min-height:36px;margin:0;padding:8px 10px;border:0;border-radius:4px;background:transparent;color:inherit;font:inherit;text-align:left;white-space:nowrap;cursor:pointer}
+.ess-row-action-menu button.ess-row-menu-item:hover{background:var(--surface-alt,#F1F3F5)}
+.ess-row-action-menu button.ess-row-menu-item:disabled{opacity:.45;cursor:default}
+.ess-row-action-menu button.ess-row-menu-item.is-destructive{color:var(--danger,#E83F30)}
+.ess-row-action-menu button svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8}
+.ess-row-more:focus-visible,.ess-row-menu-item:focus-visible{outline:2px solid var(--brand,#0968D2);outline-offset:2px}
+.workflow-config-host .ess-compact-headers :is(th,td){padding:8px 16px;height:48px;vertical-align:middle}
+.workflow-config-host .ess-compact-headers th:nth-child(1){width:48%}
+.workflow-config-host .ess-compact-headers th:nth-child(2){width:18%}
+.workflow-config-host .ess-compact-headers th:nth-child(3){width:auto}
+.workflow-config-host .ess-compact-headers th:last-child{width:72px}
+@media(pointer:coarse){button.ess-row-more{width:44px;height:44px}.ess-row-action-menu button.ess-row-menu-item{min-height:44px}}
+[data-ess-detail="true"]{cursor:pointer}
+[data-ess-detail="true"]:focus-visible{outline:2px solid var(--brand,#0968D2);outline-offset:-2px}
+
+/* Shared list density; editable grids and form tables remain unmarked. */
+:root{--ess-list-row-height:44px}
+table.ess-list-grid>thead>tr>th,
+table.ess-list-grid>tbody>tr>td{height:var(--ess-list-row-height)!important;padding-block:4px!important;vertical-align:middle;box-sizing:border-box}
+table.ess-list-grid td{line-height:18px}
+table.ess-list-grid .ess-grid-value{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:34px;line-height:16px}
+table.ess-list-grid td .c-main{display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:1!important;overflow:hidden!important;line-height:18px!important;font-size:14px!important;max-height:18px}
+table.ess-list-grid td .c-sub{margin-top:0!important;line-height:16px!important}
+table.ess-list-grid .admin-note{line-height:16px}
+/* My Tasks renders its desktop table with CSS grid; mobile cards retain their layout. */
+@media(min-width:701px){
+ #main .task-table-scroll .tablehead,#main .task-table-row{min-height:var(--ess-list-row-height);padding-block:4px}
+ #main .task-table-row{font-size:14px;line-height:18px}
+ #main .task-table-row .chev{min-height:32px}
+ #main .task-table-row .title{font-size:14px;line-height:18px;-webkit-line-clamp:1}
+ #main .task-table-row .datebox{line-height:16px;gap:0}
+ #main .task-table-row .datebox .tag{font-size:11px;line-height:14px;padding:1px 6px}
+}

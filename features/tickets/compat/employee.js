@@ -1,0 +1,1 @@
+location.replace("features/tickets/my-tickets/index.html"+location.search+(location.hash||""));

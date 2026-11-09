@@ -1,0 +1,18 @@
+.workflow-config-host .ess-api-table .fd-mth{height:24px;min-height:24px;box-sizing:border-box}
+.workflow-config-host .ess-api-table .ess-row-more{width:24px;height:24px;min-height:24px;padding:3px;border-radius:6px}
+.workflow-config-host .ess-api-table .ess-row-more svg{width:16px;height:16px}
+.ess-api-card>.ess-matrix-pagination{border-top:0}
+.ess-breadcrumb-group{position:relative;display:inline-flex}
+.ess-breadcrumb-submenu{position:absolute;left:0;top:100%;z-index:45;min-width:200px;padding:6px;background:#fff;border:1px solid #DFE3E8;border-radius:8px;box-shadow:0 8px 24px #1018281f;display:flex;flex-direction:column;gap:2px}
+.ess-breadcrumb-submenu[hidden]{display:none}
+.ess-breadcrumb-submenu a{display:block;padding:8px 10px;color:#454F5B;text-decoration:none;border-radius:4px;white-space:nowrap;font:400 14px/20px Inter,Arial,sans-serif}
+.ess-breadcrumb-submenu a:hover,.ess-breadcrumb-submenu a:focus-visible{background:#E6F2FF;color:#0968D2}
+.ess-collapsed-icon{display:none}
+@media(min-width:768px){
+ .is-sidebar-collapsed #adminCenterSidebar .ess-admin-primary-nav{display:flex}
+ .is-sidebar-collapsed #adminCenterSidebar .ess-admin-sidebar-footer>img{display:none}
+ .is-sidebar-collapsed #adminCenterSidebar .ess-collapsed-icon{display:block;width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+ .is-sidebar-collapsed #adminCenterSidebar .ess-workflow-nav-item[aria-current=page]::before{display:none}
+ .is-sidebar-collapsed #adminCenterSidebar .ess-workflow-nav-item[aria-current=page]{background:#E6F2FF}
+}
+.workflow-config-host .workflow-custom-icon{display:inline-flex;vertical-align:middle;margin-right:8px;font-size:20px;line-height:22px}

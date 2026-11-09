@@ -1,0 +1,1 @@
+location.replace('features/tickets/compat/employee.html'+location.search+(location.hash||'#my-tickets'));

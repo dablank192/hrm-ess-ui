@@ -1,0 +1,17 @@
+.global-header{flex:none;height:56px;min-height:56px;padding:0;gap:0;z-index:20}.global-header .brand,.global-header a{text-decoration:none}.global-header .header-inner{max-width:none;padding:0 32px}.foot{display:none}.top{padding-left:32px;padding-right:32px}.workspace{margin-left:32px;margin-right:32px}.global-header .header-avatar{padding:0}#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:12px;background:#161C24;color:#fff;padding:12px 16px;border-radius:8px}#toast button{border:0;background:transparent;color:inherit}#statusToast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#161C24;color:white;padding:12px 18px;border-radius:8px;z-index:50}@media(max-width:650px){.global-header .header-inner{padding:0 16px}.top{padding:18px 16px 0}.workspace{margin:0 16px}}
+/* Q261106-1715: Approval badge (MTK-UI-019.01) and loading / error states (MTK-UI-020.01, .02) */
+.ticket-nav-badge{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;margin-left:8px;border-radius:10px;background:#D32F2F;color:#fff;font-size:12px;font-weight:600;line-height:20px;font-style:normal}
+.ticket-nav-badge[hidden]{display:none}
+.ticket-nav-badge-collapsed{display:none;position:absolute;top:4px;right:6px;margin:0;min-width:18px;height:18px;line-height:18px;padding:0 5px}
+.ess-admin-sidebar-title{position:relative}
+.is-sidebar-collapsed .ess-admin-sidebar .ticket-nav-badge-collapsed:not([hidden]){display:inline-flex}
+.ess-admin-sidebar .ess-workflow-nav-item .ticket-nav-badge{position:static}
+.tk-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tk-skeleton{position:absolute;inset:0;z-index:5;padding:16px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.tk-skeleton[hidden],.tk-error[hidden]{display:none}
+.tk-skeleton i{display:block;height:44px;border-radius:6px;background:linear-gradient(90deg,#EEF1F4 25%,#E1E6EB 37%,#EEF1F4 63%);background-size:400% 100%;animation:tkShimmer 1.4s ease infinite}
+@keyframes tkShimmer{0%{background-position:100% 50%}100%{background-position:0 50%}}
+@media(prefers-reduced-motion:reduce){.tk-skeleton i{animation:none}}
+.tk-error{position:absolute;inset:0;z-index:5;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#454F5B;text-align:center;padding:24px}
+.tk-error svg{color:#B71D18}.tk-error p{margin:0;max-width:420px}
+.workspace{position:relative}.workspace.tk-blocked iframe{visibility:hidden}

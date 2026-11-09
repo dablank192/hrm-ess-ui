@@ -1,0 +1,160 @@
+.view-switch{display:flex;gap:3px;background:#F1F3F5;border-radius:8px;padding:4px}.view-switch button{display:flex;align-items:center;gap:7px;min-height:36px;padding:7px 14px;background:transparent;border:0;border-radius:6px;color:#454F5B;font:500 14px/20px Inter,'Segoe UI',sans-serif}.view-switch button[aria-pressed=true]{background:#fff;color:#0968D2;box-shadow:0 1px 3px #10182815}.view-switch svg{width:16px;height:16px}.my-tasks-page .panelhead{padding:14px 24px}.filter-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.filter-help{width:100%;margin:0}.status-filter{margin-left:auto}.calendar-controls{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;gap:16px}.month-controls{display:flex;align-items:center;gap:10px}.month-controls h3{font-size:18px;min-width:165px;text-align:center}.calendar-icon{width:40px;height:40px;background:white;border:1px solid #DFE3E8;border-radius:8px;color:#454F5B;font-size:22px}.calendar-controls .btn{min-height:40px;padding:8px 14px}.calendar-guide{font-size:12px;color:#454F5B}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid #DFE3E8}.weekday{background:#F8F9FA;padding:10px 12px;font-size:12px;font-weight:600;color:#454F5B;text-align:right;border-bottom:1px solid #DFE3E8}.day{min-height:122px;padding:8px;border-right:1px solid #DFE3E8;border-bottom:1px solid #DFE3E8;min-width:0}.day:nth-child(7n){border-right:0}.day.other{background:#FAFBFC}.day.other .date-number{color:#919DAB}.day.today{background:#F8FBFF}.date-number{min-width:28px;height:28px;border:0;background:none;border-radius:50%;float:right;color:#454F5B;font:500 13px Inter,'Segoe UI',sans-serif;display:grid;place-items:center}.today .date-number{background:#0968D2;color:white}.day.selected{box-shadow:inset 0 0 0 2px #0968D2}.day-items{clear:both;padding-top:7px;display:grid;gap:5px}.event{display:block;padding:6px 8px;border-radius:5px;background:#E6F2FF;border-left:3px solid #0968D2;color:#161C24!important;min-width:0;text-align:left;text-decoration:none}.event:hover{background:#DCEBFD}.event.overdue{background:#FFF1EF;border-left-color:#E83F30}.event.soon{background:#FFFAEB;border-left-color:#E18308}.event.terminal{background:#F1F3F5;border-left-color:#919DAB}.event-title{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.event-meta{font-size:10px;line-height:16px;color:#454F5B;display:flex;justify-content:space-between;gap:4px}.event-meta .urgency{color:#8C4A06}.event.overdue .urgency{color:#A52A20}.more{border:0;background:none;color:#0968D2;padding:3px 8px;font:500 12px Inter,'Segoe UI',sans-serif;min-height:28px;text-align:left}.undated{padding:16px 24px 20px}.undated summary{font-size:14px;font-weight:600;cursor:pointer;min-height:40px;display:flex;align-items:center;gap:8px}.undated summary:before{content:'▾';color:#637381}.undated:not([open]) summary:before{content:'▸'}.undated .task-row{padding:14px 0!important}.month-empty{margin:0;padding:12px 24px;background:#F8F9FA;font-size:13px;color:#454F5B;border-top:1px solid #DFE3E8}.mobile-count,.mobile-agenda{display:none}#calendarDay{width:min(560px,calc(100vw - 32px));padding:0}#calendarDay .dialog-header{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #DFE3E8;gap:12px}#calendarDay h2{margin:0}#calendarDay .day-list{max-height:60vh;overflow:auto;padding:0 24px}#calendarDay .task-row{display:block;padding:16px 0}.day-list .task-main{display:block}.day-list .datebox{flex-direction:row;margin-top:10px;gap:8px}.dialog-close{background:none;border:0;color:#454F5B;font-size:24px;min-width:44px;min-height:44px}.day-list .summary{margin-top:4px}.day-list .row-meta{margin-top:8px}.calendar-grid a:focus-visible{outline-offset:1px}.calendar-grid button:focus-visible{outline-offset:0}*{scrollbar-width:thin;scrollbar-color:#B8C0C9 transparent}
+@media(max-width:1100px){.calendar-guide{display:none}.day-items .event:nth-of-type(n+3){display:none}.day{min-height:110px}.event-meta{display:none}}
+@media(max-width:700px){.my-tasks-page .panelhead{padding:12px 16px;flex-wrap:nowrap}.view-switch button{padding:8px 10px;min-height:40px}.filter-toolbar{padding:12px 16px;display:block}.status-filter{width:100%;flex-direction:row;align-items:center;margin-top:12px}.status-filter select{flex:1;min-width:0}.calendar-controls{padding:12px;gap:8px}.month-controls{gap:4px}.month-controls h3{font-size:15px;min-width:126px}.calendar-icon{width:36px;height:40px}.calendar-controls .btn{padding:8px 10px}.day{min-height:65px;padding:4px}.weekday{padding:8px 2px;text-align:center;font-size:11px}.date-number{float:none;margin:auto;min-width:32px;height:32px}.day-items{display:none}.mobile-count{display:block;text-align:center;font-size:10px;color:#0968D2;margin-top:2px}.other .mobile-count{color:#637381}.mobile-agenda{display:block;padding:16px;border-bottom:1px solid #DFE3E8}.mobile-agenda h3{font-size:14px;margin-bottom:8px}.mobile-agenda .task-row{display:block;padding:14px 0}.mobile-agenda .datebox{display:flex;margin-top:8px}.undated{padding:12px 16px}.month-empty{padding:12px 16px}.results-bar{font-size:12px!important;flex-wrap:wrap}.my-tasks-page .task-row .title{font-size:14px}.my-tasks-page .summary{font-size:13px}}
+
+.day{position:relative}.day-create{position:absolute;left:6px;top:6px;min-height:32px;border:0;border-radius:5px;background:#E6F2FF;color:#0968D2;font:500 11px/16px Inter,'Segoe UI',sans-serif;padding:6px;opacity:0;pointer-events:none}.day:hover .day-create,.day:focus-within .day-create{opacity:1;pointer-events:auto}.day-create:focus-visible{opacity:1;pointer-events:auto}.planned-label{display:inline-block;font-size:12px;color:#0558B8;background:#E6F2FF;border-radius:5px;padding:2px 6px;margin-top:5px}.event-date{display:block;font-size:10px;color:#454F5B;line-height:16px}.compact-due{font-size:12px;color:#454F5B}.date-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.creation-notice{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#E6F2FF;border:1px solid #B8D7FA;border-radius:8px;padding:8px 16px;margin-bottom:16px;color:#0558B8;font-size:14px}.agenda-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.agenda-heading .day-create{position:static;opacity:1;pointer-events:auto;font-size:12px;min-height:44px}.day-list .day-create{position:static;opacity:1;pointer-events:auto;margin:16px 0;font-size:14px;min-height:44px}.task-row .planned-label{width:fit-content}@media(max-width:1100px){.day>.day-create span{display:none}.day>.day-create{opacity:1;pointer-events:auto;min-height:28px;font-size:16px}.event-date{font-size:9px}}@media(max-width:700px){.day>.day-create{display:none}.date-grid{grid-template-columns:1fr}.creation-notice{font-size:12px}.event-date{display:none}}@media(hover:none) and (min-width:701px){.day>.day-create{opacity:1;pointer-events:auto}}
+
+.month-trigger{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:180px;border:0;background:transparent;border-radius:8px;color:#101828;font:600 18px/24px Inter,'Segoe UI',sans-serif;padding:8px 10px}.month-trigger:hover{background:#F1F3F5}.month-trigger[aria-expanded=true]{background:#E6F2FF;color:#0968D2}.month-trigger svg{flex:none}.month-picker{position:fixed;z-index:50;width:300px;padding:12px;background:#fff;border:1px solid #DFE3E8;border-radius:8px;box-shadow:0 8px 24px #1018281A;overflow:auto;font:14px/20px Inter,'Segoe UI',sans-serif;color:#161C24}.picker-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.picker-header h2{font-size:16px;line-height:24px;margin:0}.picker-year-step{width:44px;height:44px;border:0;background:transparent;color:#454F5B;border-radius:6px;font-size:22px}.picker-year-step:hover{background:#F1F3F5}.picker-months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.picker-month{position:relative;min-height:44px;border:1px solid transparent;border-radius:6px;background:white;color:#454F5B;font:500 14px/20px Inter,'Segoe UI',sans-serif}.picker-month:hover{background:#F1F3F5}.picker-month.chosen{background:#E6F2FF;color:#0968D2;border-color:#0968D2;font-weight:600}.current-month-dot{position:absolute;width:4px;height:4px;border-radius:50%;background:#0968D2;bottom:4px;left:calc(50% - 2px)}.picker-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #DFE3E8;margin-top:12px;padding-top:8px;gap:8px}.picker-current{border:0;background:none;color:#0968D2;font:500 13px/20px Inter,'Segoe UI',sans-serif;min-height:44px;padding:8px;border-radius:6px}.picker-current:hover{background:#E6F2FF}.picker-footer span{font-size:11px;color:#454F5B}.month-picker button:focus-visible{outline:2px solid #0968D2;outline-offset:2px}@media(max-width:700px){.month-trigger{min-width:138px;font-size:14px;padding:8px 4px;gap:5px}.month-controls{gap:2px}.calendar-controls{padding:12px 8px}.calendar-controls .btn{padding:8px}.calendar-icon{width:32px}}
+
+/* Ticket destination drawer: preserves My Tasks beneath the shared header. */
+.task-ticket-drawer{position:fixed;z-index:102;top:0;right:0;bottom:0;width:min(560px,100vw);height:100dvh;display:flex;flex-direction:column;background:#fff;border-left:1px solid #DFE3E8;box-shadow:-8px 0 24px #10182814;font:14px/1.5 Inter,"Segoe UI",sans-serif;color:#161C24;animation:task-ticket-slide-in 180ms ease-out}.task-ticket-drawer-header{flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid #DFE3E8}.task-ticket-drawer-header h2{font-size:20px;line-height:28px;margin:0 0 6px;color:#101828}.task-ticket-drawer-header h2:focus{outline:none}.task-ticket-drawer-header p{font-size:12px;overflow-wrap:anywhere;margin:0}.task-ticket-drawer-close{flex:none;border:0;background:none;min-height:44px;min-width:44px;border-radius:8px;color:#454F5B;font-size:26px;line-height:32px}.task-ticket-drawer-close:hover{background:#F1F3F5}.task-ticket-drawer-body{flex:1;min-height:0;overflow:auto;padding:24px;overflow-wrap:anywhere;white-space:pre-line}.task-ticket-drawer-body p{margin:0;font-size:14px;line-height:22px}.task-ticket-drawer-footer{flex:none;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:16px 24px max(16px,env(safe-area-inset-bottom));border-top:1px solid #DFE3E8;background:#fff}.task-ticket-drawer .btn{font:600 14px/20px Inter,"Segoe UI",sans-serif;border-radius:8px;min-height:44px;padding:11px 16px}.task-ticket-drawer .btn.primary{background:#0968D2;color:#fff;border-color:#0968D2}.task-ticket-drawer .btn.primary:hover{background:#0558B8}.task-ticket-drawer button:focus-visible{outline:3px solid #0968D2;outline-offset:3px}.task-ticket-drawer button:disabled{opacity:.6;cursor:wait}@keyframes task-ticket-slide-in{from{transform:translateX(100%)}to{transform:translateX(0)}}@media(max-width:700px){.task-ticket-drawer{width:100%;border-left:0}.task-ticket-drawer-header,.task-ticket-drawer-body{padding:20px 16px}.task-ticket-drawer-footer{padding-inline:16px;flex-wrap:wrap}.task-ticket-drawer-footer .primary{flex:1;min-width:0}.task-ticket-drawer-header h2{font-size:18px}}@media(prefers-reduced-motion:reduce){.task-ticket-drawer{animation:none}}
+
+.task-workspace-drawer{position:fixed;z-index:102;top:0;right:0;bottom:0;width:min(720px,100vw);height:100dvh;display:flex;flex-direction:column;background:#F8F9FA;border-left:1px solid #DFE3E8;box-shadow:-8px 0 24px #10182814;animation:task-ticket-slide-in 180ms ease-out;font:14px/1.5 Inter,"Segoe UI",sans-serif}.task-workspace-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex:none;padding:16px 24px;background:#fff;border-bottom:1px solid #DFE3E8}.task-workspace-header h2{margin:8px 0;font-size:20px;line-height:28px;color:#101828;overflow-wrap:anywhere}.task-workspace-header h2:focus{outline:none}.task-workspace-drawer .my-tasks-page{min-height:0;margin:0;padding:20px 24px;flex:1;overflow:auto;overscroll-behavior:contain}.task-workspace-body .back,.task-workspace-body .page-head h1{display:none}.task-workspace-body .page-head{padding-right:0;margin-bottom:16px}.task-workspace-body .detail-title{margin:0}.task-workspace-drawer .detail-grid{grid-template-columns:1fr;gap:16px}.task-workspace-drawer .create-shell{max-width:none}.task-workspace-body .form-footer{position:sticky;bottom:-24px;background:white;padding:16px 0;margin-bottom:-8px;z-index:1}.task-workspace-body .props{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.task-workspace-drawer button:focus-visible{outline:3px solid #0968D2;outline-offset:3px}@media(max-width:700px){.task-workspace-drawer{width:100%;border-left:0}.task-workspace-header{padding:12px 16px}.task-workspace-header h2{font-size:18px}.task-workspace-drawer .my-tasks-page{padding:16px}.task-workspace-body .props{grid-template-columns:1fr}.task-workspace-body .form-footer{bottom:-20px}}@media(prefers-reduced-motion:reduce){.task-workspace-drawer{animation:none}}
+
+/* Full viewport task drawers, isolated from the shared page shell. */
+.task-drawer-backdrop{position:fixed;inset:0;z-index:101;background:rgba(16,24,40,.36)}
+body.task-drawer-open{overflow:hidden}
+.task-workspace-footer{flex:none;padding:16px 24px max(16px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid #DFE3E8}
+.task-workspace-footer .form-footer{display:flex;justify-content:flex-end;gap:12px;margin:0;padding:0;border:0}
+.task-workspace-footer .btn{min-height:44px}
+.task-workspace-body,.task-ticket-drawer-body{scrollbar-width:thin;scrollbar-color:#B0B8C2 transparent}
+.task-workspace-body::-webkit-scrollbar,.task-ticket-drawer-body::-webkit-scrollbar{width:6px}
+.task-workspace-body::-webkit-scrollbar-thumb,.task-ticket-drawer-body::-webkit-scrollbar-thumb{background:#B0B8C2;border-radius:8px}
+@media(max-width:700px){.task-workspace-footer{padding-inline:16px}.task-workspace-footer .primary{flex:1}}
+
+.tasks-body #statusToast,.tasks-body #toast{z-index:103}
+
+.task-status-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}.task-status-actions .task-cancel{order:-1;color:#B42318;border-color:#FDA29B;background:#fff}.task-status-actions .task-cancel:hover{background:#FEF3F2}.task-status-actions .primary{margin-left:auto}.early-start-help{margin:0 0 12px;color:#454F5B;font-size:14px}#statusDialog .task-cancel-confirm{color:#fff;background:#B42318;border-color:#B42318}#statusDialog .task-cancel-confirm:hover{background:#912018}.task-status-actions .btn{font-size:14px;padding:10px 16px;min-height:44px}@media(max-width:700px){.task-status-actions{flex-wrap:wrap}.task-status-actions .btn{flex:1}}
+
+/* Compact List footer follows the PX pagination reference. */
+.task-list-rows{max-height:clamp(240px,calc(100dvh - 370px),720px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C4CCD5 transparent}
+.task-list-rows::-webkit-scrollbar{width:6px}
+.task-list-rows::-webkit-scrollbar-thumb{background:#C4CCD5;border-radius:8px}
+.task-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:12px 20px;border-top:1px solid #DFE3E8;background:#fff;font-size:14px;color:#161C24}
+.task-pagination-summary,.task-page-navigation,.task-go-to{display:flex;align-items:center;gap:8px}
+.task-pagination-summary{flex-wrap:wrap;gap:8px}
+.task-pagination select,.task-go-to input{width:58px;height:34px;min-height:34px;padding:4px 8px;border:1px solid #C4CCD5;border-radius:6px;background:#fff;color:#161C24;font:inherit}
+.task-go-to{margin-left:8px;white-space:nowrap}
+.task-page-navigation{flex-wrap:wrap;gap:6px}
+.task-page-button{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:4px 8px;border:1px solid transparent;border-radius:6px;background:transparent;color:#454F5B;font:inherit;cursor:pointer}
+.task-page-button.text{color:#0968D2;font-weight:600}
+.task-page-button:hover:not(:disabled){background:#F1F3F5}
+.task-page-button[aria-current="page"]{border-color:#0968D2;color:#0968D2;background:#fff}
+.task-page-button:disabled{color:#919DAB;opacity:.6;cursor:default}
+.task-page-button:focus-visible,.task-pagination select:focus-visible,.task-go-to input:focus-visible{outline:2px solid #0968D2;outline-offset:2px}
+.task-page-ellipsis{min-width:28px;text-align:center;color:#919DAB}
+.task-page-error{flex-basis:100%;margin:0;text-align:right;color:#E83F30;font-size:13px}
+.task-go-to input[aria-invalid="true"]{border-color:#E83F30}
+.task-pagination .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:700px){.task-pagination{padding:12px 16px;gap:12px}.task-page-navigation{width:100%;gap:4px}.task-page-button{min-width:36px;height:44px;padding:4px 6px}.task-pagination select,.task-go-to input{height:44px}.task-go-to{margin-left:auto}.task-page-range{white-space:nowrap}.task-list-rows{max-height:65dvh}.task-page-error{text-align:left}}
+
+/* Approval detail navigation, styled as a text link. */
+.my-tasks-page .task-approval-actions{padding:16px 24px}
+.my-tasks-page .task-approval-link{display:inline-flex;align-items:center;min-height:44px;font:500 14px/20px Inter,"Segoe UI",sans-serif;color:#0968D2;text-decoration:underline;text-underline-offset:3px;background:transparent;border:0}
+.my-tasks-page .task-approval-link:hover{color:#0558B8}
+.my-tasks-page .task-approval-link:focus-visible{outline:3px solid #0968D2;outline-offset:4px;border-radius:2px}
+
+/* List pagination stays outside the only scrolling region: task rows. */
+body.tasks-body:has(#main .task-pagination){height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+body.tasks-body:has(#main .task-pagination)>.global-header{flex:none}
+body.tasks-body:has(#main .task-pagination) #main{flex:1;min-height:0;display:flex;flex-direction:column;padding-bottom:16px;overflow:hidden}
+body.tasks-body:has(#main .task-pagination) #main>.page-head,
+body.tasks-body:has(#main .task-pagination) #main>.creation-notice{flex:none}
+body.tasks-body:has(#main .task-pagination) #main>.panel{flex:1;min-height:0;display:flex;flex-direction:column}
+#main:has(.task-pagination) .panelhead,#main:has(.task-pagination) .filter-toolbar,#main:has(.task-pagination) .results-bar,#main:has(.task-pagination) .tablehead{flex:none}
+#main:has(.task-pagination) .task-list-rows{flex:none;min-height:0;max-height:none;overflow:visible}
+#main .task-pagination{flex:none;position:relative;z-index:1;background:#fff}
+@media print{body.tasks-body:has(#main .task-pagination){height:auto;display:block;overflow:visible}body.tasks-body:has(#main .task-pagination) #main{display:block;overflow:visible}#main:has(.task-pagination) .task-list-rows{overflow:visible}}
+
+/* Compact My Tasks list: one toolbar, with spacing separating task records. */
+#main>.page-head h1{margin-bottom:0}
+#main .filter-toolbar{flex-wrap:wrap;padding:12px 24px;gap:12px 20px}
+#main .task-toolbar-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex-wrap:wrap}
+#main .task-toolbar-right .status-filter{margin-left:0}
+#main .task-row{border-bottom:0}
+@media(max-width:1000px){#main .task-toolbar-right .status-filter select{width:160px}}
+@media(max-width:700px){#main .filter-toolbar{display:flex;padding:12px 16px}#main .task-toolbar-right{width:100%;margin-left:0;gap:12px}#main .task-toolbar-right .status-filter{width:auto;flex:1;margin-top:0;flex-direction:row;align-items:center}#main .task-toolbar-right .status-filter select{width:100%;min-width:0}#main .task-toolbar-right .view-switch{flex:none}}
+
+/* Bring the list header up and reserve more viewport height for task rows. */
+#main:has(>.panel){padding-top:16px}
+#main>.page-head:has(>.create-entry){display:flex;align-items:center;justify-content:space-between;gap:12px;padding-right:0;margin-bottom:8px;min-height:44px}
+#main>.page-head>.create-entry{position:static;margin-top:0;flex:none}
+#main .filter-toolbar{padding-top:8px;padding-bottom:8px}
+#main .tablehead{padding-top:8px;padding-bottom:8px}
+@media(max-width:700px){#main>.page-head:has(>.create-entry){flex-wrap:wrap}#main>.page-head>.create-entry{margin-top:0}}
+
+/* Approved 14 Oct: separate task fields; consistent 14px table typography. */
+#main .task-table-scroll{flex:1;min-height:0;min-width:0;display:block;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#C4CCD5 transparent}
+#main .task-table-scroll .tablehead{position:sticky;top:0;z-index:2}
+#main .task-table-scroll::-webkit-scrollbar{width:6px;height:6px}
+#main .task-table-scroll::-webkit-scrollbar-thumb{background:#C4CCD5;border-radius:8px}
+#main .task-table-scroll .tablehead,#main .task-table-row{grid-template-columns:104px minmax(180px,1.1fr) minmax(200px,1.4fr) 112px 124px 140px 112px 24px;gap:16px;min-width:1248px;padding:12px 20px}
+#main .task-table-scroll .task-list-rows{min-width:1248px}
+#main .task-table-row{min-height:76px;border-bottom:1px solid #DFE3E8;align-items:center}
+#main .task-table-scroll,#main .task-table-scroll *,#main .task-pagination,#main .task-pagination *{font-size:14px!important;line-height:21px}
+#main .task-table-row>*{min-width:0}
+#main .task-table-row .title{margin:0;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+#main .task-description{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#454F5B}
+#main .task-code{font-weight:500;overflow-wrap:anywhere}
+#main .task-table-row .creator-column{display:block;overflow-wrap:anywhere}
+#main .task-table-row .datebox,#main .task-table-row .status-column{grid-row:auto;flex-direction:column;align-items:flex-start}
+#main .task-table-row .chev{grid-column:auto;grid-row:auto;min-height:44px}
+#main .task-table-row .task-main{grid-column:auto}
+#main .task-table-scroll:focus-visible{outline:2px solid #0968D2;outline-offset:-2px}
+#main .task-table-row a:focus-visible{outline:2px solid #0968D2;outline-offset:2px}
+@media(max-width:700px){
+ #main .task-table-scroll{overflow-x:hidden}
+ #main .task-table-scroll .tablehead{display:none}
+ #main .task-table-scroll .task-list-rows{min-width:0;width:100%}
+ #main .task-table-row{min-width:0;width:100%;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 24px;gap:12px 16px;padding:16px}
+ #main .task-table-row .task-code{grid-column:1/3;grid-row:1}
+ #main .task-table-row .task-main{grid-column:1/3;grid-row:2}
+ #main .task-table-row .task-description{grid-column:1/3;grid-row:3}
+ #main .task-table-row .task-start{grid-column:1;grid-row:4}
+ #main .task-table-row .datebox{grid-column:2;grid-row:4}
+ #main .task-table-row .creator-column{grid-column:1;grid-row:5}
+ #main .task-table-row .status-column{grid-column:2;grid-row:5}
+ #main .task-table-row .chev{grid-column:3;grid-row:1/4}
+ #main .task-table-row [data-label]:not(.task-code):not(.task-main):not(.task-description)::before{content:attr(data-label);display:block;color:#454F5B;font-weight:500;margin-bottom:4px;font-size:14px}
+}
+
+/* Compact calendar controls follow the 32px ESS toolbar size. */
+#main .calendar-controls{padding:16px}
+#main .calendar-controls button{height:32px;min-height:32px;padding:5px 10px;font-size:14px;line-height:20px}
+#main .calendar-controls .calendar-icon{width:32px;padding:0;font-size:22px}
+
+/* Create Task uses the compact centered form modal; details keep the right drawer. */
+.task-workspace-drawer.is-create-modal{inset:50% auto auto 50%;margin:0;transform:translate(-50%,-50%);width:min(680px,calc(100vw - 48px));height:auto;max-height:calc(100dvh - 64px);border:1px solid #DFE3E8;border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 16px 48px #10182833;animation:none}
+.task-workspace-drawer.is-create-modal .task-workspace-header{padding:16px 20px;min-height:72px;align-items:center}
+.task-workspace-drawer.is-create-modal .task-workspace-header h2{font:600 20px/28px Inter,"Segoe UI",Arial,sans-serif;margin:0}
+.task-workspace-drawer.is-create-modal .task-workspace-body{flex:0 1 auto;min-height:0;padding:20px;background:#fff}
+.task-workspace-drawer.is-create-modal .create-shell>.page-head{margin:0 0 20px}
+.task-workspace-drawer.is-create-modal .create-shell>.panel{border:0;border-radius:0;box-shadow:none;overflow:visible}
+.task-workspace-drawer.is-create-modal .task-form{padding:0}
+.task-workspace-drawer.is-create-modal .form-field{margin-bottom:20px}
+.task-workspace-drawer.is-create-modal .form-field label{margin-bottom:6px;color:#454F5B;font-weight:600}
+.task-workspace-drawer.is-create-modal .form-field input:not([type=file]){height:40px;min-height:40px;padding:9px 12px}
+.task-workspace-drawer.is-create-modal .form-field textarea{height:112px;min-height:112px}
+.task-workspace-drawer.is-create-modal .task-workspace-footer{padding:16px 20px}
+.task-workspace-drawer.is-create-modal .task-workspace-footer .btn{height:40px;min-height:40px;padding:9px 16px}
+@media(max-width:700px){
+ .task-workspace-drawer.is-create-modal{width:calc(100vw - 32px);height:auto;max-height:calc(100dvh - 32px)}
+ .task-workspace-drawer.is-create-modal .task-workspace-header,.task-workspace-drawer.is-create-modal .task-workspace-body{padding:16px}
+ .task-workspace-drawer.is-create-modal .task-workspace-footer{padding:16px}
+}
+
+/* Required fields remain semantic inputs; the visible marker uses ESS error red. */
+.task-workspace-drawer.is-create-modal .required-mark{color:#E83F30}
+.task-workspace-drawer.is-create-modal .task-form>.form-field:last-of-type{margin-bottom:0}
+
+/* Create Task exit confirmation matches the shared Profile confirmation. */
+.tasks-body dialog.task-exit-confirm{box-sizing:border-box;width:min(436px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:28px 32px;border:1px solid #DFE3E8;border-radius:12px;text-align:center;box-shadow:0 16px 48px #161C2429;color:#161C24;background:#fff}
+.task-exit-confirm::backdrop{background:rgba(22,28,36,.4)}
+.task-exit-confirm-open #taskDrawerBackdrop{background:transparent}
+.tasks-body .task-exit-confirm h2{margin:0;font:700 18px/26px Inter,"Segoe UI",sans-serif;color:#161C24}
+.tasks-body .task-exit-confirm p{margin:10px 0 24px;font:400 14px/22px Inter,"Segoe UI",sans-serif;color:#454F5B}
+.task-exit-confirm-actions{display:flex;justify-content:center;gap:10px}
+.tasks-body .task-exit-confirm .btn{height:42px;min-height:42px;padding:10px 18px;border:1px solid #C4CCD5;border-radius:8px;background:#fff;color:#454F5B;font:600 14px/20px Inter,"Segoe UI",sans-serif}
+.tasks-body .task-exit-confirm .btn.primary{min-width:94px;background:#0968D2;border-color:#0968D2;color:#fff}
+.tasks-body .task-exit-confirm .btn.primary:hover{background:#0558B8;border-color:#0558B8}
+@media(max-width:480px){.tasks-body dialog.task-exit-confirm{padding:24px 20px}}

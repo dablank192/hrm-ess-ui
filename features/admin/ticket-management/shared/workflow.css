@@ -1,0 +1,209 @@
+/* ESS shell integration. The supplied workflow designer's geometry stays intact. */
+body.workflow-config-host{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:#F8F9FA;color:#161C24;font:400 14px/1.5 Inter,'Segoe UI',Arial,sans-serif}
+.workflow-config-host>.app{min-height:0;flex:1;display:flex;flex-direction:column}
+.workflow-config-host .global-header{flex:0 0 56px;height:56px;min-height:56px;position:sticky;top:0;z-index:40}
+.workflow-config-host .global-header .header-inner{width:100%;max-width:none;min-width:0;padding-inline:clamp(16px,2.5vw,48px)}
+.workflow-config-host .global-header .header-spacer{min-width:0;flex:1}
+.workflow-config-host .global-header .brand{color:#fff}
+.workflow-config-host .global-header .floating-menu{left:clamp(16px,2.5vw,48px)}
+.workflow-config-host .ess-workflow-nav{top:56px;z-index:39;padding-inline:clamp(16px,2.5vw,48px)}
+.workflow-config-host .content{width:100%;min-width:0;padding-inline:clamp(16px,2.5vw,48px)}
+.workflow-config-host .tbl,.workflow-config-host .tbl :is(th,td){font-size:14px;line-height:20px}
+.workflow-config-host .tbl :is(th,td) :is(.c-sub,.c-code,.chip){font-size:14px;line-height:20px}
+.workflow-config-host .page-head h1{font-size:26px;line-height:34px;font-weight:700;color:#101828}
+.workflow-config-host .btn{min-height:40px;border-radius:8px}
+.workflow-config-host .ess-workflow-page-head{align-items:center;flex-wrap:nowrap;gap:12px}
+.workflow-config-host .ess-workflow-page-head h1{min-width:0;margin:0;font-size:24px;line-height:32px;overflow-wrap:anywhere}
+.workflow-config-host .ess-workflow-back{display:grid;place-items:center;flex:none;width:40px;height:40px;min-height:40px;margin:0;padding:10px;border:0;border-radius:8px;background:transparent;color:#161C24}
+.workflow-config-host .ess-workflow-back:hover{background:#F1F3F5}
+.workflow-config-host .ess-workflow-back:focus-visible{outline:2px solid #0968D2;outline-offset:2px}
+.workflow-config-host .ess-workflow-back svg{width:20px;height:20px;flex:none}
+@media(max-width:600px){.workflow-config-host .ess-workflow-page-head h1{font-size:22px;line-height:30px}}
+.workflow-config-host :is(.pg-tools,.gtb,.workflow-summary-toolbar) :is(input:not([type=checkbox]):not([type=radio]),select,.btn,.seg2 button){height:32px;min-height:32px;max-height:32px;font-size:14px;line-height:20px;padding-block:5px}
+.workflow-config-host :is(.pg-tools,.gtb,.workflow-summary-toolbar) select{padding-block:0}
+.workflow-config-host>.ess-site-footer{flex:none;margin-top:auto}
+.workflow-header-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;z-index:400;max-width:calc(100vw - 32px);padding:12px 16px;background:#161C24;color:#fff;border-radius:8px;font:14px/20px Inter,'Segoe UI',Arial,sans-serif}
+.workflow-header-toast button{border:0;border-radius:4px;background:transparent;color:inherit;cursor:pointer;padding:4px}
+@media(max-width:700px){.workflow-config-host .global-header .header-inner{padding-inline:16px;gap:10px}.workflow-config-host .ess-workflow-nav,.workflow-config-host .content{padding-inline:16px}}
+
+/* Designer pages own a bounded workspace instead of scrolling the document. */
+body.workflow-config-host:has(#view .dsn){height:100vh;height:100dvh;min-height:0;overflow:hidden}
+.workflow-config-host:has(#view .dsn) .ess-admin-layout{min-height:0}
+.workflow-config-host:has(#view .dsn) :is(.ess-admin-section,.shell,.main){min-height:0}
+.workflow-config-host:has(#view .dsn) #view{min-height:0;overflow:hidden;display:flex;flex-direction:column;padding-bottom:24px}
+.workflow-config-host:has(#view .dsn) #view>.page-head{flex:none;flex-wrap:wrap}
+.workflow-config-host #view .dsn{flex:none;height:var(--ess-designer-height,calc(100dvh - 160px))!important;min-height:0;grid-template-rows:minmax(100%,max-content);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.workflow-config-host #view .dsn>.cv{position:sticky;top:0;align-self:start;min-height:0;height:var(--ess-designer-inner-height,calc(100dvh - 162px));overscroll-behavior:contain}
+.workflow-config-host #view .dsn-pal{position:sticky;top:0;align-self:start;overflow:visible;max-height:none}
+.workflow-config-host #view .insp{min-width:0;overflow:visible;max-height:none}
+.workflow-config-host #view .ess-insp-heading{position:sticky;top:0;z-index:8;flex:none;background:#fff}
+.workflow-config-host #view .insp-b{flex:none;overflow:visible;max-height:none}
+.workflow-config-host #view .sys-wrap{flex:none;min-height:auto;overflow:visible}
+.workflow-config-host #view .sys-wrap>.insp-b{flex:1;min-height:auto;overflow:visible}
+.workflow-config-host #view .sys-bag{height:auto!important;max-height:none;overflow:visible}
+.workflow-config-host #view :is(.sb-b,.bag-b){flex:none;max-height:none;overflow:visible}
+.workflow-config-host #view .bag-split{display:none}
+
+/* Management-list headings match Access Configuration: 20px title and full workspace divider. */
+.workflow-config-host #view:has(>.ess-management-list-heading){--workflow-list-gutter:32px;max-width:none;padding:24px var(--workflow-list-gutter) 32px}
+.workflow-config-host #view>.ess-management-list-heading{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:57px;margin:0 calc(-1 * var(--workflow-list-gutter)) 20px;padding:0 var(--workflow-list-gutter) 16px;border-bottom:1px solid #DFE3E8}
+.workflow-config-host #view>.ess-management-list-heading h1{font:600 20px/20px Inter,"Segoe UI",Arial,sans-serif;letter-spacing:normal;margin:0}
+.workflow-config-host #view>.ess-management-list-heading .btn{height:40px;min-height:40px;border-radius:8px;padding-block:9px;line-height:20px}
+@media(max-width:767px){.workflow-config-host #view:has(>.ess-management-list-heading){--workflow-list-gutter:16px}}
+@media(max-width:600px){.workflow-config-host #view>.ess-management-list-heading{flex-wrap:wrap;align-items:flex-start}.workflow-config-host #view>.ess-management-list-heading .ph-actions{flex-wrap:wrap}}
+
+/* Approval matrix follows the ESS list header, pagination and centered create form. */
+.workflow-config-host #view:has(>.ess-matrix-heading){padding-top:0}
+.workflow-config-host #view>.ess-matrix-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 calc(-1 * var(--workflow-list-gutter));padding:12px 16px 0;background:#fff;font:400 12px/20px Inter,Arial,sans-serif;color:#454F5B}
+.ess-matrix-breadcrumb a{color:#0558B8;text-decoration:none}
+.ess-matrix-breadcrumb a:hover{text-decoration:underline}
+.ess-matrix-breadcrumb>[aria-hidden]{color:#919DAB}
+.workflow-config-host #view>.ess-matrix-heading{padding:16px;min-height:72px;background:#fff}
+.ess-matrix-pagination{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;min-height:56px;padding:12px 16px;border-top:1px solid #C4CCD5;background:#fff;font:400 14px/20px Inter,Arial,sans-serif;color:#161C24}
+.ess-matrix-pagination-summary,.ess-matrix-pagination-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-width:0}
+.ess-matrix-pagination-summary>span{white-space:nowrap}
+.ess-matrix-pagination :is(select,input){height:32px;min-height:32px;border:1px solid #C4CCD5;border-radius:6px;background:#fff;color:#161C24;padding:4px 8px;font:inherit}
+.ess-matrix-pagination select{width:64px}
+.ess-matrix-pagination input{width:52px;appearance:textfield;text-align:center}
+.ess-matrix-pagination input::-webkit-inner-spin-button,.ess-matrix-pagination input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.ess-matrix-pagination button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:4px 8px;border:1px solid transparent;border-radius:6px;background:transparent;color:#0968D2;font:inherit;cursor:pointer}
+.ess-matrix-pagination button:hover:not(:disabled){background:#E6F2FF}
+.ess-matrix-pagination button[aria-current=page]{border-color:#0968D2;background:#fff}
+.ess-matrix-pagination button:disabled{color:#919DAB;cursor:default}
+.ess-matrix-pagination-controls>label{margin-left:4px;white-space:nowrap}
+.ess-matrix-pagination :is(button,input,select):focus-visible{outline:2px solid #0968D2;outline-offset:2px}
+body.matrix-create-open{overflow:hidden}
+.ess-matrix-dialog{width:min(1040px,calc(100vw - 48px));max-width:none;max-height:calc(100dvh - 64px);padding:0;border:1px solid #DFE3E8;border-radius:8px;background:#F8F9FA;color:#161C24;overflow:visible;box-shadow:0 16px 48px #10182833;font:400 14px/1.5 Inter,Arial,sans-serif}
+.ess-matrix-dialog::backdrop{background:rgba(16,24,40,.36)}
+.workflow-config-host .ess-matrix-modal-content{position:static;display:flex;width:100%;max-width:none;height:auto;max-height:calc(100dvh - 66px);min-height:0;transform:none;transition:none;border-radius:8px;overflow:hidden;box-shadow:none}
+.ess-matrix-modal-content .drw-h{align-items:center;flex:none;min-height:72px;padding:16px 24px}
+.ess-matrix-modal-content .drw-h h2{margin:0;font:600 20px/28px Inter,Arial,sans-serif}
+.ess-matrix-modal-content .drw-h .meta:empty{display:none}
+.ess-matrix-modal-content .drw-h .x-btn{width:40px;height:40px;border-radius:8px}
+.ess-matrix-modal-content .drw-b{min-height:0;overflow:auto;overscroll-behavior:contain;padding:20px 24px}
+.ess-matrix-modal-content .drw-f{justify-content:flex-end;flex:none;padding:16px 24px;gap:12px}
+.ess-matrix-modal-content .drw-f .btn{width:94px;min-width:94px;height:40px;min-height:40px;padding:9px 12px;border-radius:8px;justify-content:center}
+@media(max-width:767px){.ess-matrix-dialog{width:calc(100vw - 32px);max-height:calc(100dvh - 32px)}.workflow-config-host .ess-matrix-modal-content{max-height:calc(100dvh - 34px)}.ess-matrix-modal-content :is(.drw-h,.drw-b,.drw-f){padding:16px}.ess-matrix-modal-content .drw-h h2{font-size:18px;line-height:26px}.ess-matrix-pagination{padding:12px;gap:12px}.ess-matrix-pagination-controls{gap:4px}}
+
+/* v57 functionality adopts the existing ESS control scale and icon treatment. */
+.workflow-config-host .workflow-group-filter{width:180px;flex:none}
+.workflow-config-host .workflow-group-order{display:inline-flex;gap:4px;margin-right:4px}
+.workflow-config-host .workflow-group-position{display:flex;gap:16px;flex-wrap:wrap}
+.workflow-config-host .workflow-custom-icon{display:inline-flex;vertical-align:middle;margin-right:6px}
+.workflow-config-host .workflow-custom-icon svg{width:18px;height:18px}
+.workflow-config-host .apx{border:0;background:none;display:flex;flex-direction:column;gap:6px;overflow:visible}
+.workflow-config-host .apx-r{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.workflow-config-host .apx-r.on{border-color:var(--brand-line);background:var(--brand-soft)}
+.workflow-config-host .apx-ck{font-size:14px}
+.workflow-config-host .apx-b{padding-left:24px}
+.workflow-config-host .hx-sel{height:40px;border-radius:8px}
+.workflow-config-host .hx-box{min-height:40px}
+.workflow-config-host .hd-tbl{table-layout:auto}
+.workflow-config-host .hd-tbl th{width:auto}
+.workflow-config-host .hd-tbl th:last-child{width:96px}
+.workflow-config-host .hd-stats{display:none}
+.workflow-config-host .hdp-tx b,.workflow-config-host .hd-st span{font-size:14px}
+.workflow-config-host .hdp-i{border-radius:8px}
+.workflow-config-host .hdx-r{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 38px}
+.workflow-config-host .sb-ch{display:none}
+.workflow-config-host .sb-i{cursor:default}
+.workflow-config-host .pth{border-radius:8px}
+.workflow-config-host .tpl,.workflow-config-host .fpick{border-radius:8px}
+@media(max-width:600px){.workflow-config-host .workflow-group-filter{max-width:100%;width:100%}.workflow-config-host .hdx-r,.workflow-config-host .hdx-th{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 32px}.workflow-config-host .tpl{flex-wrap:wrap}.workflow-config-host .hx-t{flex-wrap:wrap;gap:0 8px}}
+
+/* Lists shrink to their rows, capped by the viewport; only overflowing records scroll. */
+body.workflow-config-host:has(#view.ess-table-list){height:100vh;height:100dvh;min-height:0;overflow:hidden}
+.workflow-config-host:has(#view.ess-table-list)>.app{height:100%;min-height:0}
+.workflow-config-host:has(#view.ess-table-list) :is(.ess-admin-layout,.ess-admin-section,.shell,.main){min-height:0}
+.workflow-config-host #view.ess-table-list{display:flex;flex-direction:column;min-height:0;overflow:hidden;padding-bottom:24px}
+.workflow-config-host #view.ess-table-list>:not(.ess-table-card){flex:none}
+.workflow-config-host #view.ess-table-list>.ess-table-card{display:flex;flex-direction:column;flex:0 1 auto;min-height:0;margin:0}
+.workflow-config-host .ess-table-card>.card-b{display:flex;flex-direction:column;flex:0 1 auto;min-height:0}
+.workflow-config-host .ess-table-card .tbl-wrap{flex:0 1 auto;min-height:0;overflow:auto!important;overscroll-behavior:contain;scrollbar-gutter:stable}
+.workflow-config-host .ess-table-card .tbl-wrap:focus-visible{outline-offset:-2px}
+.workflow-config-host .ess-table-card .tbl thead th{position:sticky;top:0;z-index:2;border-bottom:1px solid var(--line-soft);box-shadow:none}
+.workflow-config-host .ess-table-card>.ess-matrix-pagination{flex:none;border-top:0}
+.workflow-config-host .ess-table-card .tbl td{border-bottom:1px solid var(--line-soft)}
+/* All three table lists follow Shared headers' text hierarchy and control sizing. */
+.workflow-config-host #view.ess-table-list .tbl :is(.c-main,tbody>tr>td:first-child){font-size:14px;font-weight:500}
+.workflow-config-host #view[data-ui-screen="user-group"] .tbl .c-code{color:var(--ink-2);font-weight:400}
+.workflow-config-host #view.ess-table-list .pg-tools>input.inp{max-width:min(300px,100%)!important}
+.workflow-config-host #view.ess-table-list .pg-tools>select.inp{max-width:min(190px,100%)!important}
+.workflow-config-host .ug-tbl .ug-employee-row>.ug-role{border-right:0;width:auto}
+.workflow-config-host .ug-tbl .ug-employee-row>.ug-act{border-left:0;width:96px}
+.workflow-config-host .ug-tbl th:last-child{text-align:right;width:96px}
+.workflow-config-host .ess-table-card>.empty{flex:0 1 auto;min-height:0;overflow:auto}
+.workflow-config-host .ess-table-card .rm-pop{position:fixed;top:var(--ess-menu-top);left:var(--ess-menu-left);right:auto;max-height:calc(100dvh - 80px);overflow:auto}
+.workflow-config-host .ess-table-card .hd-nm{font-size:14px;font-weight:500}
+.workflow-config-host .fd-wrap>.card{margin:0}
+.workflow-config-host .hxf .hx-h{flex-wrap:wrap}
+.workflow-config-host .hxf .hdp-pop{position:relative;flex:0 0 100%;top:auto;left:auto;right:auto;margin-top:0}
+.workflow-config-host textarea.ftm{min-height:40px}
+.workflow-config-host .ess-api-card{margin:0}
+.workflow-config-host .ess-api-table{width:100%;table-layout:fixed}
+.workflow-config-host .ess-api-table th:nth-child(1){width:22%}
+.workflow-config-host .ess-api-table th:nth-child(2){width:100px}
+.workflow-config-host .ess-api-table th:nth-child(4){width:23%}
+.workflow-config-host .ess-api-table th:nth-child(5){width:100px;text-align:right}
+.workflow-config-host .ess-api-table :is(th,td){border-bottom:1px solid var(--line-soft);overflow-wrap:anywhere}
+.workflow-config-host .ess-api-table .c-main{font-size:14px;font-weight:500}
+.workflow-config-host .ess-api-table .ess-api-url{font:400 14px/20px Inter,Arial,sans-serif;color:var(--ink-2)}
+.workflow-config-host .ess-api-name{grid-template-columns:minmax(0,1fr)}
+body.api-form-open{overflow:hidden}
+.workflow-config-host .ess-api-dialog #drw.ess-matrix-modal-content{width:100%!important}
+.workflow-config-host .ess-api-dialog .drw-h{justify-content:space-between}
+.workflow-config-host .ess-api-dialog .drw-b>.meta{margin-bottom:16px}
+.workflow-config-host .ess-api-dialog .fd-mu{margin-top:16px}
+.workflow-config-host .ess-api-fields{margin-top:24px}
+.workflow-config-host .ess-api-fields h3{margin:0 0 12px;font:600 14px/20px Inter,Arial,sans-serif}
+.workflow-config-host .ess-api-grid-wrap{overflow:auto;border:1px solid var(--line-soft);border-radius:8px}
+.workflow-config-host .ess-api-grid{width:100%;min-width:850px;table-layout:fixed;border-collapse:collapse}
+.workflow-config-host .ess-api-grid th{padding:10px 8px;background:var(--ground);color:var(--ink-2);font-weight:600;text-align:left;border-bottom:1px solid var(--line-soft)}
+.workflow-config-host .ess-api-grid td{padding:8px;vertical-align:top;border-bottom:1px solid var(--line-soft)}
+.workflow-config-host .ess-api-grid tr:last-child td{border-bottom:0}
+.workflow-config-host .ess-api-grid :is(th,td){font-size:14px;line-height:20px;border-right:1px solid var(--line-soft)}
+.workflow-config-host .ess-api-grid :is(th,td):last-child{border-right:0;text-align:center}
+.workflow-config-host .ess-api-grid th:first-child{width:44px}
+.workflow-config-host .ess-api-grid th:nth-child(2){width:19%}
+.workflow-config-host .ess-api-grid th:nth-child(3){width:21%}
+.workflow-config-host .ess-api-grid th:nth-child(4){width:15%}
+.workflow-config-host .ess-api-grid th:last-child{width:64px}
+.workflow-config-host .ess-api-grid .inp{width:100%;min-width:0;height:40px;padding:8px;font:400 14px/22px Inter,Arial,sans-serif}
+.workflow-config-host .ess-description-preview{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.workflow-config-host .ess-api-grid .ess-description-editor{height:auto;min-height:96px;resize:none;white-space:pre-wrap;overflow:hidden}
+.workflow-config-host .ess-api-grid [hidden]{display:none!important}
+.workflow-config-host .ess-api-add-row{margin-top:12px}
+.workflow-config-host .ess-api-error,.workflow-config-host .ess-api-dialog .req{color:var(--danger)}
+.workflow-config-host .ess-api-dialog .ess-api-form-footer{justify-content:space-between}
+.workflow-config-host .ess-api-form-footer>div{display:flex;gap:12px}
+.workflow-config-host .ess-api-form-footer .btn{width:94px;min-width:94px}
+.workflow-config-host .ess-api-grid th:first-child{width:64px}
+.workflow-config-host .ess-schema-toggle{width:20px;height:28px;padding:0;border:0;background:transparent;color:var(--brand);cursor:pointer;font-size:16px}
+.workflow-config-host .ess-array-row>td{background:var(--brand-soft)}
+.workflow-config-host .ess-child-row>td{background:var(--surface)}
+.workflow-config-host .ess-schema-path{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-3);font:400 11px/18px Inter,Arial,sans-serif;margin-top:4px}
+.workflow-config-host .ess-api-grid .ess-schema-add>td{background:var(--ground);padding-block:8px;text-align:left}
+.workflow-config-host .ess-schema-add .btn{height:32px;min-height:32px;padding-block:4px}
+.workflow-config-host .ess-schema-add span{margin-left:12px;color:var(--ink-2);font-size:12px}
+@media(max-width:900px){.workflow-config-host .ess-api-table{min-width:760px}}
+.workflow-config-host .fdp label>.req{color:var(--danger)}
+@media(max-width:767px){
+ .workflow-config-host .fd-g2{grid-template-columns:minmax(0,1fr)}
+ .workflow-config-host .ftx-th{display:none}
+ .workflow-config-host .ftx-r{grid-template-columns:24px minmax(0,1fr) 36px;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+ .workflow-config-host .ftx-r>.ftx-no{grid-column:1;grid-row:1 / span 4}
+ .workflow-config-host .ftx-r>div:not(.ftx-a){grid-column:2;min-width:0}
+ .workflow-config-host .ftx-r>.ftx-a{grid-column:3;grid-row:1}
+}
+@media(max-width:767px){
+ .workflow-config-host:has(#view.ess-table-list) .ess-admin-layout{grid-template-rows:minmax(0,auto) minmax(0,1fr)}
+ .workflow-config-host:has(#view.ess-table-list) .ess-admin-sidebar{max-height:min(32dvh,240px)}
+ .workflow-config-host:has(#view.ess-table-list) .ess-admin-sidebar-inner{height:100%;max-height:min(32dvh,240px)}
+ .workflow-config-host #view.ess-table-list{padding-bottom:16px}
+}
+body.role-form-open{overflow:hidden}
+.workflow-config-host .ess-role-dialog #drw.ess-matrix-modal-content{width:100%!important}
+
+/* Match the ESS primary action in every node form inspector. */
+.workflow-config-host #insp button[onclick="openLayout()"]{background:#0968D2;border-color:#0968D2;color:#fff}
+.workflow-config-host #insp button[onclick="openLayout()"]:hover{background:#0558B8;border-color:#0558B8}

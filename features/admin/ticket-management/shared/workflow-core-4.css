@@ -1,0 +1,15 @@
+
+/* Status totals double as the workflow list filters. Counts use the full current unit. */
+.workflow-summary-toolbar{gap:12px 20px;margin-bottom:16px;align-items:center}
+.workflow-summary-toolbar .lft,.workflow-summary-toolbar .rgt{gap:12px;min-width:0}
+.workflow-summary-toolbar .rgt{margin-left:auto}
+.seg2.workflow-status-filters{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:0;border:0;background:transparent;box-shadow:none;border-radius:0}
+.seg2.workflow-status-filters button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 12px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--ink-2);font:500 14px/20px var(--sans);white-space:nowrap;cursor:pointer;box-shadow:none}
+.seg2.workflow-status-filters button:hover{background:var(--surface-alt)}
+.seg2.workflow-status-filters button.on{background:var(--brand-soft);color:var(--brand-ink);font-weight:600;border-color:transparent;box-shadow:none}
+.seg2.workflow-status-filters button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.workflow-status-count{min-width:18px;padding:0 4px;border-radius:4px;font-size:12px;font-weight:600;text-align:center;background:var(--surface-alt);color:var(--ink-2)}
+.workflow-status-filters button.on .workflow-status-count{background:#fff;color:var(--brand-ink)}
+.workflow-summary-toolbar .gsearch{width:320px;max-width:100%}
+@media(max-width:1000px){.workflow-summary-toolbar .rgt{margin-left:0;flex:1;justify-content:flex-end}.workflow-summary-toolbar .gsearch{width:260px}}
+@media(max-width:600px){.workflow-summary-toolbar>.lft,.workflow-summary-toolbar>.rgt{width:100%;justify-content:flex-start}.workflow-summary-toolbar .gsearch{width:100%;flex:1;min-width:180px}.seg2.workflow-status-filters button{padding-inline:9px}}

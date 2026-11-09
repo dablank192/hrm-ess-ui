@@ -1,0 +1,10 @@
+
+/* Horizontal module navigation; the designer node palette stays in its workspace. */
+.ess-workflow-nav{position:sticky;top:56px;z-index:39;display:flex;align-items:stretch;gap:24px;min-height:48px;padding:0 clamp(16px,2.5vw,40px);background:var(--surface);border-bottom:1px solid var(--line-soft);overflow-x:auto;white-space:nowrap;flex:none}
+.ess-workflow-nav-item{display:flex;align-items:center;flex:none;min-height:48px;padding:12px 4px 10px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--ink-2);font:500 14px/20px var(--sans);cursor:pointer}
+.ess-workflow-nav-item:hover{background:var(--surface-alt);color:var(--brand)}
+.ess-workflow-nav-item.active{color:var(--brand);font-weight:600;border-bottom-color:var(--brand)}
+.ess-workflow-nav-item:focus-visible{outline:2px solid var(--brand);outline-offset:-4px}
+.ess-workflow-footer{flex:none;padding:12px 24px;text-align:center;font:400 12px/18px var(--sans);color:var(--ink-2);background:var(--ground)}
+.shell>.main{width:100%}.content{margin-inline:auto}.content.wide{max-width:none}
+@media(max-width:600px){.ess-workflow-nav{gap:16px;padding-inline:16px}.ess-workflow-nav-item{font-size:13px}.ess-workflow-footer{padding-inline:16px}}

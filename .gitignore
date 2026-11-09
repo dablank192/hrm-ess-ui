@@ -26,6 +26,7 @@
 **/.sites-checkout/
 **/AGENTS.md
 **/CLAUDE.md
+!/CLAUDE.md
 **/SKILL.md
 **/node_modules/
 **/dist/

@@ -1,6 +1,6 @@
 # UI checks
 
-These tests belong only to the GitHub checkout. Do not transfer this directory,
+These tests belong only to the GitHub checkout. Do not transfer `.github/`, this directory,
 package.json or package-lock.json with UI changes to Sites or OneDrive.
 They do not deploy or modify the live Site.
 
@@ -38,5 +38,7 @@ The six-page browser smoke check covers representative runtime loading.
 
 This suite covers Chromium desktop over HTTP. It does not validate file://,
 visual appearance, every business rule, or the live deployment.
-GitHub Actions configuration is a separate next step; these commands are ready
-to use as its source-checks and browser-smoke jobs.
+`.github/workflows/ui-ci.yml` runs source-checks and browser-smoke as independent
+jobs on pull requests targeting main, pushes to main, or manual dispatch.
+Both use Node.js 22 on Ubuntu. Failed browser runs upload traces for seven days.
+The workflow only validates source; it does not merge PRs or deploy Sites.

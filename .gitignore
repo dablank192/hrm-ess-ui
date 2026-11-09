@@ -9,6 +9,7 @@
 !/assets/
 !/scripts/
 !/tests/
+!/.github/
 !/package.json
 !/package-lock.json
 /scripts/*

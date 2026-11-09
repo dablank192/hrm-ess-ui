@@ -8,6 +8,9 @@
 !/data/
 !/assets/
 !/scripts/
+!/tests/
+!/package.json
+!/package-lock.json
 /scripts/*
 !/scripts/prepare-local.cjs
 !/scripts/serve.cjs

@@ -1,0 +1,13 @@
+{
+  "name": "hrm-ess-ui",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:source && npm run test:browser",
+    "test:source": "node --test tests/source.test.cjs",
+    "test:browser": "playwright test --config tests/playwright.config.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "parse5": "7.3.0"
+  }
+}

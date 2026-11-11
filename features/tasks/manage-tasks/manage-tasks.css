@@ -32,3 +32,6 @@
 
 /* Task search follows the shared compact search field. */
 .task-search-toolbar{margin:0 0 16px}.task-search-field{display:flex;align-items:center;gap:8px;width:300px;max-width:100%;height:32px;padding:0 10px;border:1px solid #C4CCD5;border-radius:6px;background:#fff;color:#637381}.task-search-field:focus-within{border-color:#0968D2;box-shadow:0 0 0 2px #0968D21A}.task-search-field svg{flex:none}.task-search-field input{width:100%;min-width:0;height:100%;padding:0;border:0;outline:none;background:transparent;color:var(--text);font:inherit;font-size:14px}.task-search-field input::placeholder{color:#919EAB}
+
+/* Match the Admin Center breadcrumb above the page heading. */
+.tasks-body .tasks-layout>#main.my-tasks-page:has(>.task-breadcrumb){padding-top:0}.task-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:8px;flex:none;margin:0 calc(-1 * var(--task-workspace-gutter));padding:12px var(--task-workspace-gutter) 0;background:#fff;font:400 12px/20px Inter,Arial,sans-serif;color:#454F5B}.task-breadcrumb a{color:#0558B8;text-decoration:none}.task-breadcrumb a:hover{text-decoration:underline}.tasks-body #main>.task-breadcrumb+.page-head{padding-top:16px;min-height:72px;background:#fff}

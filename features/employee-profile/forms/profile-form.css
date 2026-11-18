@@ -10,6 +10,17 @@ body{min-height:100vh;display:flex;flex-direction:column;background:#F8F9FA}
 .form-section{grid-column:1/-1;min-width:0}.form-section+.form-section{padding-top:22px;margin-top:22px;border-top:1px solid #DFE3E8}
 .form-section h2,.conditional-section h2{font-size:15px;line-height:22px;color:#101828;margin:0 0 18px}
 .form-section-plain .form-section-grid{margin:0}
+.profile-attachments h2{margin-bottom:8px;font-size:14px;color:#475467}
+.profile-attachments h2 span,.profile-attachment-error{color:#b42318}
+.profile-attachment-drop{display:grid;justify-items:center;gap:6px;padding:16px;border:1px dashed #b8c4d1;border-radius:5px;background:#f5f6f8;text-align:center;color:#344054;font-size:13px}
+.profile-attachment-drop svg,.profile-attachment-drop button,.profile-attachment-list button{color:#0068d9}
+.profile-attachment-drop button,.profile-attachment-list button{border:0;background:none;font:inherit;cursor:pointer;padding:3px 6px}
+.profile-attachment-drop button:hover,.profile-attachment-list button:hover{text-decoration:underline}
+.profile-attachment-error{margin:6px 0 0;font-size:13px;overflow-wrap:anywhere}
+.profile-attachment-list{margin:8px 0 0;padding:0;list-style:none;font-size:13px}
+.profile-attachment-error:empty,.profile-attachment-list:empty{display:none}
+.profile-attachment-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid #dfe3e8}
+.profile-attachment-list li span{min-width:0;overflow-wrap:anywhere}
 .form-field{min-width:0;display:flex;flex-direction:column;gap:7px}
 .form-field label{color:#454F5B;font-size:14px;font-weight:600;line-height:20px}
 .required-star{color:#E83F30}

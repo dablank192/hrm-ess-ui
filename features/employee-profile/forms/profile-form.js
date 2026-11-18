@@ -230,6 +230,50 @@ for(const section of sections){
   }
   group.append(grid);fieldRoot.append(group);
 }
+const attachments=[];
+let attachmentButton, attachmentError;
+if(['thong-tin-co-ban','nguoi-than'].includes(blockId)){
+  const group=document.createElement('section');
+  group.className='form-section profile-attachments';
+  group.innerHTML=`<h2>Attach File <span aria-hidden="true">*</span></h2>
+    <div class="profile-attachment-drop">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.9-9.9 6 6 0 0 1 11.5-1A5.5 5.5 0 0 1 18.5 19H7Z M12 16V9m-3 3 3-3 3 3"/></svg>
+      <button type="button" aria-describedby="profile-attachment-hint profile-attachment-error">Upload file</button>
+      <span id="profile-attachment-hint">or drop it here. PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG, TXT (Max 5 MB per file, up to 5 files)</span>
+      <input type="file" multiple hidden>
+    </div>
+    <p id="profile-attachment-error" class="profile-attachment-error" role="alert"></p>
+    <ul class="profile-attachment-list" aria-label="Attached files"></ul>`;
+  const drop=group.querySelector('.profile-attachment-drop');
+  attachmentButton=drop.querySelector('button');
+  attachmentError=group.querySelector('[role="alert"]');
+  const picker=drop.querySelector('input');
+  const list=group.querySelector('ul');
+  const extensions=['pdf','doc','docx','xls','xlsx','png','jpg','jpeg','txt'];
+  picker.accept=extensions.map(extension=>'.'+extension).join(',');
+  function addAttachments(files){
+    const errors=[];
+    for(const file of files){
+      const extension=file.name.slice(file.name.lastIndexOf('.')+1).toLowerCase();
+      const error=!file.name.includes('.')||!extensions.includes(extension)?'File format is not supported.':
+        file.size>5*1024*1024?'File exceeds 5 MB.':attachments.length>=5?'You can attach up to 5 files.':'';
+      if(error){errors.push(`${file.name}: ${error}`);continue;}
+      attachments.push(file);
+      const item=document.createElement('li');
+      const name=document.createElement('span');name.textContent=file.name;
+      const remove=document.createElement('button');remove.type='button';remove.textContent='Remove';
+      remove.setAttribute('aria-label',`Remove ${file.name}`);
+      remove.addEventListener('click',()=>{attachments.splice([...list.children].indexOf(item),1);item.remove();attachmentError.textContent='';attachmentButton.focus()});
+      item.append(name,remove);list.append(item);
+    }
+    attachmentError.textContent=errors.join(' ');
+  }
+  attachmentButton.addEventListener('click',()=>picker.click());
+  picker.addEventListener('change',()=>{addAttachments(picker.files);picker.value=''});
+  drop.addEventListener('dragover',event=>event.preventDefault());
+  drop.addEventListener('drop',event=>{event.preventDefault();addAttachments(event.dataTransfer.files)});
+  fieldRoot.append(group);
+}
 if(embedded){
   const complex=['nguoi-than','trinh-do-hoc-van','chung-chi','kinh-nghiem-lam-viec','to-chuc-xa-hoi','khen-thuong','ky-luat'].includes(blockId);
   document.body.classList.toggle('profile-form-expanded',complex);
@@ -259,8 +303,8 @@ if(embedded){
     const nav=document.createElement('nav');nav.className='profile-form-sections';nav.setAttribute('aria-label','Các phần biểu mẫu');
     const navHeading=document.createElement('h2');navHeading.textContent='Nội dung';nav.append(navHeading);
     const groups=[...fieldRoot.children];
-    groups.forEach((group,index)=>{group.id='profile-form-section-'+index;const button=document.createElement('button');button.type='button';button.textContent=(index+1)+'. '+group.querySelector('h2').textContent;button.addEventListener('click',()=>{group.scrollIntoView({block:'start',behavior:'smooth'});group.querySelector('input,select')?.focus({preventScroll:true})});nav.append(button)});
-    const updateNav=()=>{let active=0;const top=main.getBoundingClientRect().top+32;groups.forEach((group,i)=>{if(group.getBoundingClientRect().top<=top)active=i});nav.querySelectorAll('button').forEach((button,i)=>{if(i===active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')})};
+    groups.forEach((group,index)=>{group.id='profile-form-section-'+index;const button=document.createElement('button');button.type='button';const isAttachment=group.classList.contains('profile-attachments');button.textContent=(index+1)+'. '+(isAttachment?'Attach File':group.querySelector('h2').textContent);button.addEventListener('click',()=>{group.scrollIntoView({block:'start',behavior:'smooth'});group.querySelector(isAttachment?'button':'input,select')?.focus({preventScroll:true})});nav.append(button)});
+    const updateNav=()=>{let active=0;const top=main.getBoundingClientRect().top+32;groups.forEach((group,i)=>{if(group.getBoundingClientRect().top<=top)active=i});if(attachmentButton&&main.scrollTop>0&&main.scrollHeight-main.clientHeight-main.scrollTop<=1)active=groups.length-1;nav.querySelectorAll('button').forEach((button,i)=>{if(i===active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')})};
     main.addEventListener('scroll',updateNav);layout.append(nav,main);updateNav();
     const summary=document.createElement('aside');summary.className='profile-form-summary';
     const title=document.createElement('h2');title.textContent='Tóm tắt';summary.append(title);
@@ -386,6 +430,7 @@ function validate(){
     const birth=normalizeDate(window.profileMockFixtures['thong-tin-co-ban']['Date of Birth']);
     if(birth&&state['Issue Date']<=birth){setError('Issue Date','Ngày cấp phải sau ngày sinh.');first??=inputs.get('Issue Date')}
   }
+  if(attachmentButton&&!attachments.length){attachmentError.textContent='Attach at least one file.';first??=attachmentButton}
   if(first){first.focus();first.scrollIntoView({block:'center',behavior:'smooth'});return false}
   return true;
 }

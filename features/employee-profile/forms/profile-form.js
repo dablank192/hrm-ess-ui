@@ -239,7 +239,7 @@ if(['thong-tin-co-ban','nguoi-than'].includes(blockId)){
     <div class="profile-attachment-drop">
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.9-9.9 6 6 0 0 1 11.5-1A5.5 5.5 0 0 1 18.5 19H7Z M12 16V9m-3 3 3-3 3 3"/></svg>
       <button type="button" aria-describedby="profile-attachment-hint profile-attachment-error">Upload file</button>
-      <span id="profile-attachment-hint">or drop it here. PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG, TXT (Max 5 MB per file, up to 5 files)</span>
+      <span id="profile-attachment-hint">or drop it here. PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG (Max 5 MB per file, up to 5 files)</span>
       <input type="file" multiple hidden>
     </div>
     <p id="profile-attachment-error" class="profile-attachment-error" role="alert"></p>
@@ -249,7 +249,7 @@ if(['thong-tin-co-ban','nguoi-than'].includes(blockId)){
   attachmentError=group.querySelector('[role="alert"]');
   const picker=drop.querySelector('input');
   const list=group.querySelector('ul');
-  const extensions=['pdf','doc','docx','xls','xlsx','png','jpg','jpeg','txt'];
+  const extensions=['pdf','doc','docx','xls','xlsx','png','jpg','jpeg'];
   picker.accept=extensions.map(extension=>'.'+extension).join(',');
   function addAttachments(files){
     const errors=[];
